@@ -1,0 +1,61 @@
+#app {
+  background-color: #ffffff;
+  border-radius: 6px;
+  border: 1px solid #e8e6e6;
+  padding: 15px;
+  position: relative;
+  margin-top: 10px;
+}
+
+#app :before {
+  content: " ";
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #e8e6e6;
+  position: absolute;
+  top: -8px;
+  left: calc(50% - 6px);
+}
+
+textarea {
+  padding: 10px;
+  font-size: 10px;
+}
+
+.rt {
+  padding: 5px 0;
+}
+
+.rt > label {
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.rt strong {
+  font-size: 14px;
+  display: inline-block;
+  padding-right: 10px;
+  width: 100px;
+  text-align: right;
+}
+
+.ctl {
+  padding-top: 15px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ctl button {
+  border: none;
+  background-color: transparent;
+  opacity: .4;
+  cursor: pointer;
+}
+.ctl button:hover {
+  opacity: .8;
+}

@@ -1,0 +1,231 @@
+/***************************************************************
+****************************************************************
+****************************************************************
+************************ DARK - COFFEE *************************
+****************************************************************
+****************************************************************
+***************************************************************/
+
+.dark-theme,
+html[data-theme=dark] {
+  --ls-primary-background-color: #211c1b;
+  --ls-secondary-background-color: #27211f;
+  --ls-tertiary-background-color: #2b2524;
+  --ls-quaternary-background-color: #362f2e;
+  --ls-table-tr-even-background-color: #362f2e;
+  --ls-active-primary-color: #c28eaa;
+  --ls-active-secondary-color: #e8d0dc;
+  --ls-block-properties-background-color: var(--ls-secondary-background-color);
+  --ls-block-ref-link-text-color: #b9543b;
+  --ls-search-background-color: var(--ls-primary-background-color);
+  --ls-border-color: #473134;
+  --ls-guideline-color: #2f2928;
+  --ls-menu-hover-color: var(--ls-secondary-background-color);
+  --ls-primary-text-color: #9e836d;
+  --ls-secondary-text-color: #dbd7d5;
+  --ls-title-text-color: #9e836d;
+  --ls-link-text-color: #dd745b;
+  --ls-link-text-hover-color: #eb8e77;
+  --ls-link-ref-text-color: #79b990;
+  --ls-link-ref-text-hover-color: #93cea9;
+  --ls-tag-text-color: var(--ls-link-text-color);
+  --ls-tag-text-hover-color: var(--ls-link-text-hover-color);
+  --ls-slide-background-color: var(--ls-primary-background-color);
+  --ls-block-bullet-border-color: #61554d;
+  --ls-block-bullet-color: #423834;
+  --ls-block-highlight-color: #064645;
+  --ls-selection-background-color: #AB3641;
+  --ls-page-checkbox-color: #935c62;
+  --ls-page-checkbox-border-color: var(--ls-primary-background-color);
+  --ls-page-blockquote-color: var(--ls-primary-text-color);
+  --ls-page-blockquote-bg-color: #1d1614;
+  --ls-page-blockquote-border-color: #3c2629;
+  --ls-page-inline-code-color: var(--ls-primary-text-color);
+  --ls-page-inline-code-bg-color: #1b1715;
+  --ls-scrollbar-foreground-color: rgba(255, 255, 255, 0.05);
+  --ls-scrollbar-background-color: rgba(67, 30, 41, 0.9);
+  --ls-scrollbar-thumb-hover-color: rgba(255, 255, 255, 0.2);
+  --ls-head-text-color: #9e836d;
+  --ls-icon-color: var(--ls-quaternary-background-color);
+  --ls-search-icon-color: var(--ls-quaternary-background-color);
+  --ls-a-chosen-bg: var(--ls-secondary-background-color);
+  --ls-right-sidebar-code-bg-color: #3c041f;
+  --color-level-1: var(--ls-secondary-background-color);
+  --color-level-2: var(--ls-tertiary-background-color);
+  --color-level-3: var(--ls-quaternary-background-color);
+  --color-level-4: #632f46;
+  --color-level-5: #865673;
+  --color-level-6: #9e6889;
+}
+
+
+/***************************************************************
+***************************** TOP ******************************
+***************************************************************/
+
+
+/* gradient on top for aesthetics */
+
+.dark-theme .cp__sidebar-main-content:before {
+  background: linear-gradient(to bottom, rgba(33, 28, 27, .7) 0%, rgba(33, 28, 27, 0) 100%);
+}
+
+.dark-theme .cp__sidebar-main-content:after {
+  background: linear-gradient(to top, rgba(33, 28, 27, .7) 0%, rgba(33, 28, 27, 0) 100%);
+}
+
+
+/* < > buttons */
+
+.dark-theme a[title="Go Back"],
+.dark-theme a[title="Go Forward"] {
+  background: var(--ls-primary-background-color);
+}
+
+.dark-theme a[title="Go Back"]:hover,
+.dark-theme a[title="Go Forward"]:hover {
+  background: var(--ls-secondary-background-color);
+}
+
+
+/* search-field */
+
+.dark-theme #search_field {
+  background: linear-gradient(to right, rgba(39, 33, 33, 1) 0%, rgba(39, 33, 33, .7) 200px, rgba(39, 33, 33, 0) 100%);
+  transition: background .3s;
+}
+
+.dark-theme #search_field:focus {
+  box-shadow: 0px 0px 20px 0px rgba(27, 22, 22, 0.8);
+}
+
+
+/***************************************************************
+************************** MAIN AREA ***************************
+***************************************************************/
+
+
+/* title menu ... */
+
+.dark-theme [title="More options"] svg {
+  color: #ab6341;
+}
+
+
+/* text mark/highlight */
+
+.dark-theme mark {
+  background: #196755;
+  color: #e0d3c9;
+}
+
+
+/* bold and italics */
+
+.dark-theme b,
+.dark-theme strong,
+.dark-theme i {
+  color: #baa695;
+}
+
+
+/* page reference */
+
+.dark-theme .page-reference:hover {
+  background: var(--ls-tertiary-background-color);
+}
+
+.dark-theme .references-blocks .page-reference:hover {
+  background: var(--ls-tertiary-background-color);
+}
+
+.dark-theme .page-reference .text-gray-500 {
+  /* page brackets */
+  opacity: .5;
+}
+
+
+/* block reference */
+
+.dark-theme .block-ref {
+  background: rgba(121, 94, 110, .5);
+  color: #e0d8cb;
+  border-bottom-color: rgba(121, 85, 106, .5);
+}
+
+
+/* selected block or higlighted page link */
+
+.dark-theme .ls-block.selected .page-reference:hover,
+.dark-theme mark .page-reference:hover {
+  background: #145042;
+}
+
+.dark-theme .ls-block.selected .page-ref,
+.dark-theme mark .page-ref {
+  color: #fff;
+}
+
+.dark-theme .ls-block.selected .page-ref:hover,
+.dark-theme mark .page-ref:hover {
+  color: #f7f7e8;
+}
+
+
+/* checkbox */
+
+.dark-theme .marker-switch {
+  color: #000;
+  background: #52373a;
+}
+
+.dark-theme .marker-switch:hover {
+  background: #5d3e41;
+}
+
+
+/***************************************************************
+************************ RIGHT SIDEBAR *************************
+***************************************************************/
+
+.dark-theme .cp__right-sidebar.is-open {
+  background: rgba(97, 67, 55, .05);
+}
+
+.dark-theme .cp__right-sidebar .sidebar-item .close svg {
+  color: #776857;
+}
+
+
+/***************************************************************
+**************************** MISC ******************************
+***************************************************************/
+
+
+/* dotted bg */
+
+.dark-theme #app-container {
+  background-image: radial-gradient(#423019 5%, #211c1b 5%);
+  background-position: 0 0;
+  background-size: 25px 25px;
+}
+
+.dark-theme textarea {
+  caret-color: #a79486;
+}
+
+.dark-theme ::selection {
+  background: #69b6a7;
+  color: #c4b2a6;
+}
+
+
+/* settings switcher */
+
+.dark-theme .bg-indigo-600 {
+  background: #dd745b;
+}
+
+.dark-theme .bg-indigo-600:hover {
+  background: #eb8e77;
+}

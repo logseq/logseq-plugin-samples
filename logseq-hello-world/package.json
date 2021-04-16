@@ -1,0 +1,22 @@
+{
+  "name": "logseq-hello-world",
+  "version": "0.0.1",
+  "author": "©Logseq Team",
+  "main": "dist/index.html",
+  "description": "📖 Hello, Logseq :)",
+  "icon": "logseq.png",
+  "license": "MIT",
+  "scripts": {},
+  "dependencies": {
+    "@logseq/libs": "^0.0.1-alpha.2"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  },
+  "browserslist": [
+    "chrome 80"
+  ],
+  "logseq": {
+    "id": "_edodonfur"
+  }
+}

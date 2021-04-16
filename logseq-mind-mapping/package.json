@@ -1,0 +1,12 @@
+{
+  "name": "logseq-mind-mapping",
+  "version": "0.0.1",
+  "description": "Yet a logseq plugin for page map mapping diagram :)",
+  "main": "index.html",
+  "author": "@Logseq",
+  "icon": "./icon.png",
+  "license": "MIT",
+  "logseq": {
+    "id": "_kxh5s1das"
+  }
+}

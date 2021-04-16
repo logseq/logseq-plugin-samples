@@ -1,0 +1,24 @@
+{
+  "name": "logseq-BuJo-themes",
+  "author": "©Logseq FE",
+  "version": "0.0.2",
+  "description": "Such a beautiful lighten theme 🔆 / ☕️",
+  "logseq": {
+    "themes": [
+      {
+        "name": "light-sepia",
+        "url": "./light-sepia.css",
+        "description": "Such a beautiful lighten theme 🔆",
+        "mode": "light"
+      },
+      {
+        "name": "dark-coffee",
+        "url": "./dark-coffee.css",
+        "description": "Such a beautiful darken theme ☕️",
+        "mode": "dark"
+      }
+    ],
+    "id": "_cp21purig",
+    "icon": "./icon.png"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "logseq-awesome-fonts",
+  "version": "0.0.1",
+  "description": "A font plugin for Logseq.",
+  "main": "dist/index.html",
+  "author": "©Charlie",
+  "scripts": {
+    "dev": "parcel index.html --port 1235",
+    "build": "parcel build --public-url ./ --no-source-maps index.html"
+  },
+  "dependencies": {
+    "@logseq/libs": "^0.0.1-alpha.5",
+    "preact": "^10.5.13"
+  },
+  "logseq": {
+    "icon": "./icon.png",
+    "id": "_7f8h262kf"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "browserslist": [
+    "chrome 80"
+  ]
+}
