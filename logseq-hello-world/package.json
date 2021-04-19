@@ -6,11 +6,15 @@
   "description": "📖 Hello, Logseq :)",
   "icon": "logseq.png",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build --public-url . --no-source-maps index.html"
+  },
   "dependencies": {
-    "@logseq/libs": "^0.0.1-alpha.2"
+    "@logseq/libs": "^0.0.1-alpha.5"
   },
   "devDependencies": {
+    "parcel-bundler": "^1.12.5",
     "typescript": "^4.2.4"
   },
   "browserslist": [

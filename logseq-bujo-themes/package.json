@@ -2,6 +2,7 @@
   "name": "logseq-BuJo-themes",
   "author": "©Logseq FE",
   "version": "0.0.2",
+  "main": "icon.png",
   "description": "Such a beautiful lighten theme 🔆 / ☕️",
   "logseq": {
     "themes": [

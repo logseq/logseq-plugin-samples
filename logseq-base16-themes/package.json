@@ -1,0 +1,952 @@
+{
+  "name": "base16-logseq-themes",
+  "version": "1.0.0",
+  "license": "MIT",
+  "logseq": {
+    "themes": [
+      {
+        "name": "base16-3024",
+        "url": "./css/base16-3024.css",
+        "description": "/* 3024 by Jan T. Sott (http://github.com/idleberg) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-apathy",
+        "url": "./css/base16-apathy.css",
+        "description": "/* Apathy by Jannik Siebert (https://github.com/janniks) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-ashes",
+        "url": "./css/base16-ashes.css",
+        "description": "/* Ashes by Jannik Siebert (https://github.com/janniks) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-atelier-cave-light",
+        "url": "./css/base16-atelier-cave-light.css",
+        "description": "/* Atelier Cave Light by Bram de Haan (http://atelierbramdehaan.nl) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-atelier-cave",
+        "url": "./css/base16-atelier-cave.css",
+        "description": "/* Atelier Cave by Bram de Haan (http://atelierbramdehaan.nl) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-atelier-dune-light",
+        "url": "./css/base16-atelier-dune-light.css",
+        "description": "/* Atelier Dune Light by Bram de Haan (http://atelierbramdehaan.nl) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-atelier-dune",
+        "url": "./css/base16-atelier-dune.css",
+        "description": "/* Atelier Dune by Bram de Haan (http://atelierbramdehaan.nl) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-atelier-estuary-light",
+        "url": "./css/base16-atelier-estuary-light.css",
+        "description": "/* Atelier Estuary Light by Bram de Haan (http://atelierbramdehaan.nl) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-atelier-estuary",
+        "url": "./css/base16-atelier-estuary.css",
+        "description": "/* Atelier Estuary by Bram de Haan (http://atelierbramdehaan.nl) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-atelier-forest-light",
+        "url": "./css/base16-atelier-forest-light.css",
+        "description": "/* Atelier Forest Light by Bram de Haan (http://atelierbramdehaan.nl) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-atelier-forest",
+        "url": "./css/base16-atelier-forest.css",
+        "description": "/* Atelier Forest by Bram de Haan (http://atelierbramdehaan.nl) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-atelier-heath-light",
+        "url": "./css/base16-atelier-heath-light.css",
+        "description": "/* Atelier Heath Light by Bram de Haan (http://atelierbramdehaan.nl) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-atelier-heath",
+        "url": "./css/base16-atelier-heath.css",
+        "description": "/* Atelier Heath by Bram de Haan (http://atelierbramdehaan.nl) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-atelier-lakeside-light",
+        "url": "./css/base16-atelier-lakeside-light.css",
+        "description": "/* Atelier Lakeside Light by Bram de Haan (http://atelierbramdehaan.nl) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-atelier-lakeside",
+        "url": "./css/base16-atelier-lakeside.css",
+        "description": "/* Atelier Lakeside by Bram de Haan (http://atelierbramdehaan.nl) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-atelier-plateau-light",
+        "url": "./css/base16-atelier-plateau-light.css",
+        "description": "/* Atelier Plateau Light by Bram de Haan (http://atelierbramdehaan.nl) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-atelier-plateau",
+        "url": "./css/base16-atelier-plateau.css",
+        "description": "/* Atelier Plateau by Bram de Haan (http://atelierbramdehaan.nl) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-atelier-savanna-light",
+        "url": "./css/base16-atelier-savanna-light.css",
+        "description": "/* Atelier Savanna Light by Bram de Haan (http://atelierbramdehaan.nl) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-atelier-savanna",
+        "url": "./css/base16-atelier-savanna.css",
+        "description": "/* Atelier Savanna by Bram de Haan (http://atelierbramdehaan.nl) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-atelier-seaside-light",
+        "url": "./css/base16-atelier-seaside-light.css",
+        "description": "/* Atelier Seaside Light by Bram de Haan (http://atelierbramdehaan.nl) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-atelier-seaside",
+        "url": "./css/base16-atelier-seaside.css",
+        "description": "/* Atelier Seaside by Bram de Haan (http://atelierbramdehaan.nl) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-atelier-sulphurpool-light",
+        "url": "./css/base16-atelier-sulphurpool-light.css",
+        "description": "/* Atelier Sulphurpool Light by Bram de Haan (http://atelierbramdehaan.nl) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-atelier-sulphurpool",
+        "url": "./css/base16-atelier-sulphurpool.css",
+        "description": "/* Atelier Sulphurpool by Bram de Haan (http://atelierbramdehaan.nl) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-atlas",
+        "url": "./css/base16-atlas.css",
+        "description": "/* Atlas by Alex Lende (https://ajlende.com) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-bespin",
+        "url": "./css/base16-bespin.css",
+        "description": "/* Bespin by Jan T. Sott */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-black-metal-bathory",
+        "url": "./css/base16-black-metal-bathory.css",
+        "description": "/* Black Metal (Bathory) by metalelf0 (https://github.com/metalelf0) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-black-metal-burzum",
+        "url": "./css/base16-black-metal-burzum.css",
+        "description": "/* Black Metal (Burzum) by metalelf0 (https://github.com/metalelf0) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-black-metal-dark-funeral",
+        "url": "./css/base16-black-metal-dark-funeral.css",
+        "description": "/* Black Metal (Dark Funeral) by metalelf0 (https://github.com/metalelf0) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-black-metal-gorgoroth",
+        "url": "./css/base16-black-metal-gorgoroth.css",
+        "description": "/* Black Metal (Gorgoroth) by metalelf0 (https://github.com/metalelf0) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-black-metal-immortal",
+        "url": "./css/base16-black-metal-immortal.css",
+        "description": "/* Black Metal (Immortal) by metalelf0 (https://github.com/metalelf0) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-black-metal-khold",
+        "url": "./css/base16-black-metal-khold.css",
+        "description": "/* Black Metal (Khold) by metalelf0 (https://github.com/metalelf0) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-black-metal-marduk",
+        "url": "./css/base16-black-metal-marduk.css",
+        "description": "/* Black Metal (Marduk) by metalelf0 (https://github.com/metalelf0) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-black-metal-mayhem",
+        "url": "./css/base16-black-metal-mayhem.css",
+        "description": "/* Black Metal (Mayhem) by metalelf0 (https://github.com/metalelf0) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-black-metal-nile",
+        "url": "./css/base16-black-metal-nile.css",
+        "description": "/* Black Metal (Nile) by metalelf0 (https://github.com/metalelf0) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-black-metal-venom",
+        "url": "./css/base16-black-metal-venom.css",
+        "description": "/* Black Metal (Venom) by metalelf0 (https://github.com/metalelf0) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-black-metal",
+        "url": "./css/base16-black-metal.css",
+        "description": "/* Black Metal by metalelf0 (https://github.com/metalelf0) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-brewer",
+        "url": "./css/base16-brewer.css",
+        "description": "/* Brewer by Timothée Poisot (http://github.com/tpoisot) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-bright",
+        "url": "./css/base16-bright.css",
+        "description": "/* Bright by Chris Kempson (http://chriskempson.com) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-brogrammer",
+        "url": "./css/base16-brogrammer.css",
+        "description": "/* Brogrammer by Vik Ramanujam (http://github.com/piggyslasher) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-brushtrees-dark",
+        "url": "./css/base16-brushtrees-dark.css",
+        "description": "/* Brush Trees Dark by Abraham White <abelincoln.white@gmail.com> */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-brushtrees",
+        "url": "./css/base16-brushtrees.css",
+        "description": "/* Brush Trees by Abraham White <abelincoln.white@gmail.com> */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-chalk",
+        "url": "./css/base16-chalk.css",
+        "description": "/* Chalk by Chris Kempson (http://chriskempson.com) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-circus",
+        "url": "./css/base16-circus.css",
+        "description": "/* Circus by Stephan Boyer (https://github.com/stepchowfun) and Esther Wang (https://github.com/ewang12) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-classic-dark",
+        "url": "./css/base16-classic-dark.css",
+        "description": "/* Classic Dark by Jason Heeris (http://heeris.id.au) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-classic-light",
+        "url": "./css/base16-classic-light.css",
+        "description": "/* Classic Light by Jason Heeris (http://heeris.id.au) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-codeschool",
+        "url": "./css/base16-codeschool.css",
+        "description": "/* Codeschool by blockloop */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-cupcake",
+        "url": "./css/base16-cupcake.css",
+        "description": "/* Cupcake by Chris Kempson (http://chriskempson.com) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-cupertino",
+        "url": "./css/base16-cupertino.css",
+        "description": "/* Cupertino by Defman21 */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-darkmoss",
+        "url": "./css/base16-darkmoss.css",
+        "description": "/* darkmoss by Gabriel Avanzi (https://github.com/avanzzzi) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-darktooth",
+        "url": "./css/base16-darktooth.css",
+        "description": "/* Darktooth by Jason Milkins (https://github.com/jasonm23) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-darkviolet",
+        "url": "./css/base16-darkviolet.css",
+        "description": "/* Dark Violet by ruler501 (https://github.com/ruler501/base16-darkviolet) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-decaf",
+        "url": "./css/base16-decaf.css",
+        "description": "/* Decaf by Alex Mirrington (https://github.com/alexmirrington) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-default-dark",
+        "url": "./css/base16-default-dark.css",
+        "description": "/* Default Dark by Chris Kempson (http://chriskempson.com) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-default-light",
+        "url": "./css/base16-default-light.css",
+        "description": "/* Default Light by Chris Kempson (http://chriskempson.com) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-dirtysea",
+        "url": "./css/base16-dirtysea.css",
+        "description": "/* dirtysea by Kahlil (Kal) Hodgson */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-dracula",
+        "url": "./css/base16-dracula.css",
+        "description": "/* Dracula by Mike Barkmin (http://github.com/mikebarkmin) based on Dracula Theme (http://github.com/dracula) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-edge-dark",
+        "url": "./css/base16-edge-dark.css",
+        "description": "/* Edge Dark by cjayross (https://github.com/cjayross) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-edge-light",
+        "url": "./css/base16-edge-light.css",
+        "description": "/* Edge Light by cjayross (https://github.com/cjayross) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-eighties",
+        "url": "./css/base16-eighties.css",
+        "description": "/* Eighties by Chris Kempson (http://chriskempson.com) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-embers",
+        "url": "./css/base16-embers.css",
+        "description": "/* Embers by Jannik Siebert (https://github.com/janniks) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-equilibrium-dark",
+        "url": "./css/base16-equilibrium-dark.css",
+        "description": "/* Equilibrium Dark by Carlo Abelli */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-equilibrium-gray-dark",
+        "url": "./css/base16-equilibrium-gray-dark.css",
+        "description": "/* Equilibrium Gray Dark by Carlo Abelli */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-equilibrium-gray-light",
+        "url": "./css/base16-equilibrium-gray-light.css",
+        "description": "/* Equilibrium Gray Light by Carlo Abelli */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-equilibrium-light",
+        "url": "./css/base16-equilibrium-light.css",
+        "description": "/* Equilibrium Light by Carlo Abelli */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-espresso",
+        "url": "./css/base16-espresso.css",
+        "description": "/* Espresso by Alex Mirrington (https://github.com/alexmirrington) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-eva-dim",
+        "url": "./css/base16-eva-dim.css",
+        "description": "/* Eva Dim by kjakapat (https://github.com/kjakapat) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-eva",
+        "url": "./css/base16-eva.css",
+        "description": "/* Eva by kjakapat (https://github.com/kjakapat) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-flat",
+        "url": "./css/base16-flat.css",
+        "description": "/* Flat by Chris Kempson (http://chriskempson.com) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-framer",
+        "url": "./css/base16-framer.css",
+        "description": "/* Framer by Framer (Maintained by Jesse Hoyos) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-fruit-soda",
+        "url": "./css/base16-fruit-soda.css",
+        "description": "/* Fruit Soda by jozip */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-gigavolt",
+        "url": "./css/base16-gigavolt.css",
+        "description": "/* Gigavolt by Aidan Swope (http://github.com/Whillikers) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-github",
+        "url": "./css/base16-github.css",
+        "description": "/* Github by Defman21 */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-google-dark",
+        "url": "./css/base16-google-dark.css",
+        "description": "/* Google Dark by Seth Wright (http://sethawright.com) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-google-light",
+        "url": "./css/base16-google-light.css",
+        "description": "/* Google Light by Seth Wright (http://sethawright.com) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-grayscale-dark",
+        "url": "./css/base16-grayscale-dark.css",
+        "description": "/* Grayscale Dark by Alexandre Gavioli (https://github.com/Alexx2/) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-grayscale-light",
+        "url": "./css/base16-grayscale-light.css",
+        "description": "/* Grayscale Light by Alexandre Gavioli (https://github.com/Alexx2/) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-greenscreen",
+        "url": "./css/base16-greenscreen.css",
+        "description": "/* Green Screen by Chris Kempson (http://chriskempson.com) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-gruvbox-dark-hard",
+        "url": "./css/base16-gruvbox-dark-hard.css",
+        "description": "/* Gruvbox dark, hard by Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-gruvbox-dark-medium",
+        "url": "./css/base16-gruvbox-dark-medium.css",
+        "description": "/* Gruvbox dark, medium by Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-gruvbox-dark-pale",
+        "url": "./css/base16-gruvbox-dark-pale.css",
+        "description": "/* Gruvbox dark, pale by Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-gruvbox-dark-soft",
+        "url": "./css/base16-gruvbox-dark-soft.css",
+        "description": "/* Gruvbox dark, soft by Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-gruvbox-light-hard",
+        "url": "./css/base16-gruvbox-light-hard.css",
+        "description": "/* Gruvbox light, hard by Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-gruvbox-light-medium",
+        "url": "./css/base16-gruvbox-light-medium.css",
+        "description": "/* Gruvbox light, medium by Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-gruvbox-light-soft",
+        "url": "./css/base16-gruvbox-light-soft.css",
+        "description": "/* Gruvbox light, soft by Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-hardcore",
+        "url": "./css/base16-hardcore.css",
+        "description": "/* Hardcore by Chris Caller */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-harmonic-dark",
+        "url": "./css/base16-harmonic-dark.css",
+        "description": "/* Harmonic16 Dark by Jannik Siebert (https://github.com/janniks) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-harmonic-light",
+        "url": "./css/base16-harmonic-light.css",
+        "description": "/* Harmonic16 Light by Jannik Siebert (https://github.com/janniks) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-heetch-light",
+        "url": "./css/base16-heetch-light.css",
+        "description": "/* Heetch Light by Geoffrey Teale (tealeg@gmail.com) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-heetch",
+        "url": "./css/base16-heetch.css",
+        "description": "/* Heetch Dark by Geoffrey Teale (tealeg@gmail.com) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-helios",
+        "url": "./css/base16-helios.css",
+        "description": "/* Helios by Alex Meyer (https://github.com/reyemxela) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-hopscotch",
+        "url": "./css/base16-hopscotch.css",
+        "description": "/* Hopscotch by Jan T. Sott */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-horizon-dark",
+        "url": "./css/base16-horizon-dark.css",
+        "description": "/* Horizon Dark by Michaël Ball (http://github.com/michael-ball/) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-horizon-light",
+        "url": "./css/base16-horizon-light.css",
+        "description": "/* Horizon Light by Michaël Ball (http://github.com/michael-ball/) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-horizon-terminal-dark",
+        "url": "./css/base16-horizon-terminal-dark.css",
+        "description": "/* Horizon Dark by Michaël Ball (http://github.com/michael-ball/) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-horizon-terminal-light",
+        "url": "./css/base16-horizon-terminal-light.css",
+        "description": "/* Horizon Light by Michaël Ball (http://github.com/michael-ball/) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-humanoid-dark",
+        "url": "./css/base16-humanoid-dark.css",
+        "description": "/* Humanoid dark by Thomas (tasmo) Friese */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-humanoid-light",
+        "url": "./css/base16-humanoid-light.css",
+        "description": "/* Humanoid light by Thomas (tasmo) Friese */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-ia-dark",
+        "url": "./css/base16-ia-dark.css",
+        "description": "/* iA Dark by iA Inc. (modified by aramisgithub) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-ia-light",
+        "url": "./css/base16-ia-light.css",
+        "description": "/* iA Light by iA Inc. (modified by aramisgithub) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-icy",
+        "url": "./css/base16-icy.css",
+        "description": "/* Icy Dark by icyphox (https://icyphox.ga) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-irblack",
+        "url": "./css/base16-irblack.css",
+        "description": "/* IR Black by Timothée Poisot (http://timotheepoisot.fr) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-isotope",
+        "url": "./css/base16-isotope.css",
+        "description": "/* Isotope by Jan T. Sott */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-macintosh",
+        "url": "./css/base16-macintosh.css",
+        "description": "/* Macintosh by Rebecca Bettencourt (http://www.kreativekorp.com) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-marrakesh",
+        "url": "./css/base16-marrakesh.css",
+        "description": "/* Marrakesh by Alexandre Gavioli (http://github.com/Alexx2/) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-materia",
+        "url": "./css/base16-materia.css",
+        "description": "/* Materia by Defman21 */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-material-darker",
+        "url": "./css/base16-material-darker.css",
+        "description": "/* Material Darker by Nate Peterson */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-material-lighter",
+        "url": "./css/base16-material-lighter.css",
+        "description": "/* Material Lighter by Nate Peterson */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-material-palenight",
+        "url": "./css/base16-material-palenight.css",
+        "description": "/* Material Palenight by Nate Peterson */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-material-vivid",
+        "url": "./css/base16-material-vivid.css",
+        "description": "/* Material Vivid by joshyrobot */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-material",
+        "url": "./css/base16-material.css",
+        "description": "/* Material by Nate Peterson */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-mellow-purple",
+        "url": "./css/base16-mellow-purple.css",
+        "description": "/* Mellow Purple by gidsi */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-mexico-light",
+        "url": "./css/base16-mexico-light.css",
+        "description": "/* Mexico Light by Sheldon Johnson */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-mocha",
+        "url": "./css/base16-mocha.css",
+        "description": "/* Mocha by Chris Kempson (http://chriskempson.com) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-monokai",
+        "url": "./css/base16-monokai.css",
+        "description": "/* Monokai by Wimer Hazenberg (http://www.monokai.nl) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-nebula",
+        "url": "./css/base16-nebula.css",
+        "description": "/* Nebula by Gabriel Fontes (https://github.com/Misterio77) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-nord",
+        "url": "./css/base16-nord.css",
+        "description": "/* Nord by arcticicestudio */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-nova",
+        "url": "./css/base16-nova.css",
+        "description": "/* Nova by George Essig (https://github.com/gessig), Trevor D. Miller (https://trevordmiller.com) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-ocean",
+        "url": "./css/base16-ocean.css",
+        "description": "/* Ocean by Chris Kempson (http://chriskempson.com) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-oceanicnext",
+        "url": "./css/base16-oceanicnext.css",
+        "description": "/* OceanicNext by https://github.com/voronianski/oceanic-next-color-scheme */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-one-light",
+        "url": "./css/base16-one-light.css",
+        "description": "/* One Light by Daniel Pfeifer (http://github.com/purpleKarrot) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-onedark",
+        "url": "./css/base16-onedark.css",
+        "description": "/* OneDark by Lalit Magant (http://github.com/tilal6991) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-outrun-dark",
+        "url": "./css/base16-outrun-dark.css",
+        "description": "/* Outrun Dark by Hugo Delahousse (http://github.com/hugodelahousse/) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-papercolor-dark",
+        "url": "./css/base16-papercolor-dark.css",
+        "description": "/* PaperColor Dark by Jon Leopard (http://github.com/jonleopard) based on PaperColor Theme (https://github.com/NLKNguyen/papercolor-theme) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-papercolor-light",
+        "url": "./css/base16-papercolor-light.css",
+        "description": "/* PaperColor Light by Jon Leopard (http://github.com/jonleopard) based on PaperColor Theme (https://github.com/NLKNguyen/papercolor-theme) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-paraiso",
+        "url": "./css/base16-paraiso.css",
+        "description": "/* Paraiso by Jan T. Sott */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-pasque",
+        "url": "./css/base16-pasque.css",
+        "description": "/* Pasque by Gabriel Fontes (https://github.com/Misterio77) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-phd",
+        "url": "./css/base16-phd.css",
+        "description": "/* PhD by Hennig Hasemann (http://leetless.de/vim.html) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-pico",
+        "url": "./css/base16-pico.css",
+        "description": "/* Pico by PICO-8 (http://www.lexaloffle.com/pico-8.php) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-pop",
+        "url": "./css/base16-pop.css",
+        "description": "/* Pop by Chris Kempson (http://chriskempson.com) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-porple",
+        "url": "./css/base16-porple.css",
+        "description": "/* Porple by Niek den Breeje (https://github.com/AuditeMarlow) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-railscasts",
+        "url": "./css/base16-railscasts.css",
+        "description": "/* Railscasts by Ryan Bates (http://railscasts.com) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-rebecca",
+        "url": "./css/base16-rebecca.css",
+        "description": "/* Rebecca by Victor Borja (http://github.com/vic) based on Rebecca Theme (http://github.com/vic/rebecca-theme) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-sandcastle",
+        "url": "./css/base16-sandcastle.css",
+        "description": "/* Sandcastle by George Essig (https://github.com/gessig) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-seti",
+        "url": "./css/base16-seti.css",
+        "description": "/* Seti UI by  */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-shapeshifter",
+        "url": "./css/base16-shapeshifter.css",
+        "description": "/* Shapeshifter by Tyler Benziger (http://tybenz.com) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-snazzy",
+        "url": "./css/base16-snazzy.css",
+        "description": "/* Snazzy by Chawye Hsu (https://github.com/h404bi) based on Hyper Snazzy Theme (https://github.com/sindresorhus/hyper-snazzy) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-solarflare",
+        "url": "./css/base16-solarflare.css",
+        "description": "/* Solar Flare by Chuck Harmston (https://chuck.harmston.ch) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-solarized-dark",
+        "url": "./css/base16-solarized-dark.css",
+        "description": "/* Solarized Dark by Ethan Schoonover (modified by aramisgithub) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-solarized-light",
+        "url": "./css/base16-solarized-light.css",
+        "description": "/* Solarized Light by Ethan Schoonover (modified by aramisgithub) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-spacemacs",
+        "url": "./css/base16-spacemacs.css",
+        "description": "/* Spacemacs by Nasser Alshammari (https://github.com/nashamri/spacemacs-theme) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-summercamp",
+        "url": "./css/base16-summercamp.css",
+        "description": "/* summercamp by zoe firi (zoefiri.github.io) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-summerfruit-dark",
+        "url": "./css/base16-summerfruit-dark.css",
+        "description": "/* Summerfruit Dark by Christopher Corley (http://christop.club/) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-summerfruit-light",
+        "url": "./css/base16-summerfruit-light.css",
+        "description": "/* Summerfruit Light by Christopher Corley (http://christop.club/) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-synth-midnight-dark",
+        "url": "./css/base16-synth-midnight-dark.css",
+        "description": "/* Synth Midnight Terminal Dark by Michaël Ball (http://github.com/michael-ball/) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-synth-midnight-light",
+        "url": "./css/base16-synth-midnight-light.css",
+        "description": "/* Synth Midnight Terminal Light by Michaël Ball (http://github.com/michael-ball/) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-tango",
+        "url": "./css/base16-tango.css",
+        "description": "/* Tango by @Schnouki, based on the Tango Desktop Project */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-tomorrow-night-eighties",
+        "url": "./css/base16-tomorrow-night-eighties.css",
+        "description": "/* Tomorrow Night by Chris Kempson (http://chriskempson.com) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-tomorrow-night",
+        "url": "./css/base16-tomorrow-night.css",
+        "description": "/* Tomorrow Night by Chris Kempson (http://chriskempson.com) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-tomorrow",
+        "url": "./css/base16-tomorrow.css",
+        "description": "/* Tomorrow by Chris Kempson (http://chriskempson.com) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-tube",
+        "url": "./css/base16-tube.css",
+        "description": "/* London Tube by Jan T. Sott */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-twilight",
+        "url": "./css/base16-twilight.css",
+        "description": "/* Twilight by David Hart (https://github.com/hartbit) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-unikitty-dark",
+        "url": "./css/base16-unikitty-dark.css",
+        "description": "/* Unikitty Dark by Josh W Lewis (@joshwlewis) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-unikitty-light",
+        "url": "./css/base16-unikitty-light.css",
+        "description": "/* Unikitty Light by Josh W Lewis (@joshwlewis) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-vulcan",
+        "url": "./css/base16-vulcan.css",
+        "description": "/* vulcan by Andrey Varfolomeev */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-woodland",
+        "url": "./css/base16-woodland.css",
+        "description": "/* Woodland by Jay Cornwall (https://jcornwall.com) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-xcode-dusk",
+        "url": "./css/base16-xcode-dusk.css",
+        "description": "/* XCode Dusk by Elsa Gonsiorowski (https://github.com/gonsie) */",
+        "mode": "dark"
+      },
+      {
+        "name": "base16-zenburn",
+        "url": "./css/base16-zenburn.css",
+        "description": "/* Zenburn by elnawe */",
+        "mode": "dark"
+      }
+    ],
+    "id": "_6cy6s4soq"
+  }
+}
