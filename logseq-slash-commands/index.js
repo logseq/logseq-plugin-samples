@@ -25,6 +25,13 @@ function main () {
       ['editor/clear-current-slash'],
     ],
   )
+
+  logseq.Editor.registerBlockContextMenu('🦜 Send A Tweet',
+    ({ blockId }) => {
+      logseq.App.showMsg(
+        '🦜 Tweet from block content #' + blockId,
+      )
+    })
 }
 
 //bootstrap
