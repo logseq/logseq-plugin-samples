@@ -20,8 +20,10 @@ from [here](https://github.com/logseq/logseq/releases).
 
 ### Getting Started
 
-- 🌱 Hello World Sample
-- 🎨 Custom Theme Sample
+- 🌱 [Hello World Sample](./logseq-hello-world)
+- 🎨 [Custom Theme Sample](./logseq-bujo-themes)
+- 🗓 [Journals Calendar Sample](./logseq-journals-calendar)
+- 🛠 [Custom Editor Fonts Sample](./logseq-awesome-fonts)
 
 ### License
 

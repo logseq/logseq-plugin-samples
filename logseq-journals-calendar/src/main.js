@@ -26,6 +26,8 @@ function main () {
   const key = logseq.baseInfo.id
 
   logseq.provideStyle(`
+    @import url("https://at.alicdn.com/t/font_2409735_r7em724douf.css");
+    
     div[data-injected-ui=open-calendar-${key}] {
       display: flex;
       align-items: center;

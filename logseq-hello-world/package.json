@@ -4,7 +4,6 @@
   "author": "©Logseq Team",
   "main": "dist/index.html",
   "description": "📖 Hello, Logseq :)",
-  "icon": "logseq.png",
   "license": "MIT",
   "scripts": {
     "dev": "parcel index.html",
@@ -21,6 +20,7 @@
     "chrome 80"
   ],
   "logseq": {
-    "id": "_edodonfur"
+    "id": "_edodonfur",
+    "icon": "logseq.png"
   }
 }

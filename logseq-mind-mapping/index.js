@@ -11,6 +11,10 @@ function createModel () {
 }
 
 function main () {
+  logseq.provideStyle(`
+    @import url("https://at.alicdn.com/t/font_2409735_r7em724douf.css");
+  `)
+
   logseq.setMainUIInlineStyle({
     position: 'fixed',
     zIndex: 12,

@@ -213,6 +213,7 @@ function main () {
   const id = logseq.baseInfo.id
 
   logseq.provideStyle(`
+    @import url("https://at.alicdn.com/t/font_2409735_r7em724douf.css");
     @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC&family=Prata&family=PT+Sans&family=Nunito&display=swap');
   
     [data-injected-ui='awesome-fonts-btn-${id}'] {
