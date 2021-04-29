@@ -2,7 +2,7 @@
 
 🎨 A Gorgeous Theme from https://piotrsss.github.io/logseq-tools/public/#/bujo-themes
 
-### Get started
+### API 
 
 Append `logseq#themes` schema in `package.json`
 
@@ -26,6 +26,10 @@ Append `logseq#themes` schema in `package.json`
   }
 }
 ```
+
+### Running the Sample
+
+- Just `Load unpacked plugin` in Logseq Desktop client.
 
 ### Links
 
