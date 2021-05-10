@@ -100,8 +100,8 @@ export default {
           [:find (pull ?p [*])
            :where
            [?b :block/page ?p]
-           [?p :page/journal? true]
-           [?p :page/journal-day ?d]
+           [?p :block/journal? true]
+           [?p :block/journal-day ?d]
            [(>= ?d ${my}01)] [(<= ?d ${my}31)]]
         `)
       } catch (e) {
