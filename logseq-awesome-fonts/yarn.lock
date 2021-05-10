@@ -869,10 +869,10 @@
   resolved "https://registry.yarnpkg.com/@iarna/toml/-/toml-2.2.5.tgz#b32366c89b43c6f8cefbdefac778b9c828e3ba8c"
   integrity sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==
 
-"@logseq/libs@^0.0.1-alpha.5":
-  version "0.0.1-alpha.5"
-  resolved "https://registry.yarnpkg.com/@logseq/libs/-/libs-0.0.1-alpha.5.tgz#a30b0f1b61a040ec0a90ed12ecbaa6bc9b7be9f0"
-  integrity sha512-BHFHmCJPPvuxdt/Ptx3mefck6gR8N7tOPxlakmE8eZlfvnqHG8snjbNZ+rqNkH13kad30aiPnIsuwdINCNcOxg==
+"@logseq/libs@^0.0.1-alpha.6":
+  version "0.0.1-alpha.6"
+  resolved "https://registry.yarnpkg.com/@logseq/libs/-/libs-0.0.1-alpha.6.tgz#7bdec8929b4fdae777fae904156b7b0e492a8c4a"
+  integrity sha512-Ta9OSoB5RfhxYlrokSyVjFp6skPkQHmmdRxjr3AVKzmJGJ6GgIBJUQHMgRgqJUHAY3on//UInZ0844q8xFqk2A==
   dependencies:
     debug "^4.3.1"
     dompurify "^2.2.7"
