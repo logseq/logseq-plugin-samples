@@ -6,10 +6,10 @@
   "author": "©Charlie",
   "scripts": {
     "dev": "parcel index.html --port 1235",
-    "build": "parcel build --public-url ./ --no-source-maps index.html"
+    "build": "parcel build --public-url ./ --no-source-maps index.html  --no-minify"
   },
   "dependencies": {
-    "@logseq/libs": "^0.0.1-alpha.5",
+    "@logseq/libs": "^0.0.1-alpha.6",
     "preact": "^10.5.13"
   },
   "logseq": {
