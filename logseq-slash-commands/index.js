@@ -1,9 +1,8 @@
 function main () {
-  console.log('hello world')
 
   logseq.provideModel({
     async helloSlashCommand () {
-      const { content, uuid }= await logseq.Editor.getCurrentBlock()
+      const { content, uuid } = await logseq.Editor.getCurrentBlock()
 
       logseq.App.showMsg(`
         [:div.p-2
