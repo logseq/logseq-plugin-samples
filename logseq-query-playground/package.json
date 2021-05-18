@@ -9,6 +9,7 @@
     "start": "sirv public --no-clear",
     "validate": "svelte-check"
   },
+  "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
