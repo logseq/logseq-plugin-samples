@@ -1,0 +1,68 @@
+<script lang="ts">
+  import debounce from "lodash.debounce";
+  import { AceEditor } from "./AceEditor";
+  import Wrapper from "./Wrapper.svelte";
+
+  export let query: string;
+
+  const aceOptions = { fontFamily: "Fira Code", printMargin: false };
+  let slowQuery: string;
+  const dSlowQuery = debounce(() => {
+    slowQuery = query;
+  }, 300);
+
+  $: if (query) {
+    dSlowQuery();
+  }
+
+  async function runQuery() {
+    try {
+      return await logseq.DB.datascriptQuery(query);
+    } catch (e) {
+      return [];
+    }
+  }
+
+  let res: ReturnType<typeof runQuery>;
+  $: if (slowQuery) {
+    res = runQuery();
+  }
+</script>
+
+<div class="root">
+  <Wrapper>
+    <span slot="header" class="header">Datascript Query</span>
+    <AceEditor
+      lang="clojure"
+      options={{ ...aceOptions, fontSize: "14px" }}
+      bind:value={query}
+      theme="dracula"
+      height="100%"
+      width="100%"
+    />
+  </Wrapper>
+  <Wrapper>
+    <span slot="header">Result</span>
+    {#await res}
+      <p>...running query</p>
+    {:then result}
+      <AceEditor
+        options={aceOptions}
+        value={JSON.stringify(result, null, 2)}
+        theme="solarized_light"
+        lang="json"
+        height="100%"
+        width="100%"
+        readonly
+      />
+    {/await}
+  </Wrapper>
+</div>
+
+<style>
+  .root {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+</style>
