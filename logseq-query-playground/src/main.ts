@@ -17,6 +17,11 @@ function main() {
 
   const key = logseq.baseInfo.id;
 
+  logseq.setMainUIInlineStyle({
+    // @ts-expect-error will be fixed later
+    zIndex: 11
+  });
+
   logseq.provideStyle(css`
     div[data-injected-ui=open-query-playground-${key}] {
       display: inline-flex;
