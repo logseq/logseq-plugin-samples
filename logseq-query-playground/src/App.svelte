@@ -42,9 +42,6 @@
     height: 100%;
     border-radius: 8px;
     overflow: hidden;
-  }
-
-  .inner:focus-within {
     box-shadow: 0 0 20px #888;
   }
 </style>
