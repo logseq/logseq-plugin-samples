@@ -16,11 +16,13 @@
   }
 
   async function runQuery() {
-    try {
-      return await logseq.DB.datascriptQuery(query);
-    } catch (e) {
-      return [];
-    }
+    const errorKey = "#lspmsg#error#";
+    return await logseq.DB.datascriptQuery(query).then((res) => {
+      if (errorKey in res) {
+        throw res[errorKey];
+      }
+      return res;
+    });
   }
 
   let res: ReturnType<typeof runQuery>;
@@ -44,7 +46,7 @@
   <Wrapper>
     <span slot="header">Result</span>
     {#await res}
-      <p>...running query</p>
+      <pre>...running query</pre>
     {:then result}
       <AceEditor
         options={aceOptions}
@@ -55,6 +57,8 @@
         width="100%"
         readonly
       />
+    {:catch error}
+      <pre class="error">{error.message}</pre>
     {/await}
   </Wrapper>
 </div>
@@ -64,5 +68,16 @@
     display: flex;
     width: 100%;
     height: 100%;
+  }
+
+  pre {
+    white-space: pre-wrap;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 1em;
+  }
+
+  pre.error {
+    color: red;
   }
 </style>

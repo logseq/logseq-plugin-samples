@@ -1,3 +1,3 @@
 # Logseq Query Playground Plugin
 
-![](screenshot.png)
+![](demo.gif)
