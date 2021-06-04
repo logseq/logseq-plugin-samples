@@ -1,0 +1,22 @@
+{
+  "name": "logseq-emoji-picker",
+  "version": "1.0.0",
+  "description": "A joyful emoji picker from Logseq slash command 🚀",
+  "main": "dist/index.html",
+  "author": "©Charlie",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel ./index.html --public-url ./"
+  },
+  "devDependencies": {
+    "@logseq/libs": "^0.0.1-alpha.12",
+    "parcel": "^2.0.0-beta.2"
+  },
+  "dependencies": {
+    "@joeattardi/emoji-button": "^4.6.0"
+  },
+  "logseq": {
+    "id": "charlie_emoji_picker_yo5bzxaca",
+    "icon": "./logo.png"
+  }
+}

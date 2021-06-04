@@ -24,6 +24,7 @@ from [here](https://github.com/logseq/logseq/releases).
 - 🎨 [Custom Theme Sample](./logseq-bujo-themes)
 - 🗓 [Journals Calendar Sample](./logseq-journals-calendar)
 - 🛠 [Custom Editor Fonts Sample](./logseq-awesome-fonts)
+- 😀 [Emoji Picker Sample](./logseq-emoji-picker)
 
 ### License
 
