@@ -998,10 +998,10 @@
     tslib "^2.0.0"
     twemoji "^13.0.0"
 
-"@logseq/libs@^0.0.1-alpha.12":
-  version "0.0.1-alpha.12"
-  resolved "https://registry.yarnpkg.com/@logseq/libs/-/libs-0.0.1-alpha.12.tgz#f8fc3b134946eb9d3aaa00cae3cd019bb424eef0"
-  integrity sha512-2q2LrEaNCuecNSpIfx12+gP1NMOuB9t2MJN1cuAeJFIJPOzG8hvE/BtcEHtNUoNr3beQ44gq8Sfvxm5lq9C6CQ==
+"@logseq/libs@^0.0.1-alpha.13":
+  version "0.0.1-alpha.13"
+  resolved "https://registry.yarnpkg.com/@logseq/libs/-/libs-0.0.1-alpha.13.tgz#62ad466620b0c7a33da002e0ad2ed73fffeb7e91"
+  integrity sha512-pkdDUeuf75a+kP0U0cNepUkf2HEAp1AfJbvaSLwEuzcN0TZRXCV8Rf4wA5VI0jEDDzp5AUSXP60SAWW8M45bwA==
   dependencies:
     csstype "^3.0.8"
     debug "^4.3.1"

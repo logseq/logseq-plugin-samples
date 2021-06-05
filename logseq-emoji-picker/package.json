@@ -9,7 +9,7 @@
     "dev": "parcel ./index.html --public-url ./"
   },
   "devDependencies": {
-    "@logseq/libs": "^0.0.1-alpha.12",
+    "@logseq/libs": "^0.0.1-alpha.13",
     "parcel": "^2.0.0-beta.2"
   },
   "dependencies": {
