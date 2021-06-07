@@ -148,38 +148,6 @@ function main () {
 
   render(<App/>, doc.querySelector('#app'))
 
-  logseq.App.onBlockRendererMounted(({ slot, payload }) => {
-    console.log(slot, payload)
-
-    if (payload && payload[0].startsWith(':h')) {
-      const [, hn, tx] = payload[0].match(/^:(h[1-6])(.+)$/)
-
-      logseq.provideUI({
-        slot,
-        template: `
-          <${hn} style="text-align: center">
-            ${tx.trim()}
-          </${hn}>
-        `,
-      })
-      return
-    }
-
-    logseq.provideUI({
-      slot,
-      template: `
-        <button
-        class="ui__button"
-        data-on-click="sayHello"
-        data-args="${payload}"
-        style="background-color: #2c3e50"
-        >
-          ${payload}
-        </button>
-      `,
-    })
-  })
-
   logseq.provideModel({
       sayHello ({ dataset }) {
         logseq.App.showMsg(dataset.args)
@@ -197,18 +165,6 @@ function main () {
       },
     },
   )
-
-  // logseq.App.onPageFileMounted(({ slot }) => {
-  //   logseq.provideUI({
-  //     key: 'awesome-fonts-btn',
-  //     slot,
-  //     template: `
-  //       <a data-on-click="openCalendar" style="font-weight:bold; opacity: .6; display: inline-flex; padding-left: 3px;">
-  //         <i class="iconfont icon-font"></i>
-  //       </a>
-  //   `,
-  //   })
-  // })
 
   const id = logseq.baseInfo.id
 
