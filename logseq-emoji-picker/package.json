@@ -1,6 +1,6 @@
 {
   "name": "logseq-emoji-picker",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A joyful emoji picker from Logseq slash command 🚀",
   "main": "dist/index.html",
   "author": "©Charlie",
@@ -9,7 +9,7 @@
     "dev": "parcel ./index.html --public-url ./"
   },
   "devDependencies": {
-    "@logseq/libs": "^0.0.1-alpha.13",
+    "@logseq/libs": "^0.0.1-alpha.16",
     "parcel": "^2.0.0-beta.2"
   },
   "dependencies": {

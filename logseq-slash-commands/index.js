@@ -1,7 +1,7 @@
 function main () {
-
-  logseq.provideModel({
-    async helloSlashCommand () {
+  logseq.Editor.registerSlashCommand(
+    '💥 Big Bang',
+    async () => {
       const { content, uuid } = await logseq.Editor.getCurrentBlock()
 
       logseq.App.showMsg(`
@@ -10,25 +10,6 @@ function main () {
           [:h2.text-xl "${content}"]]
       `)
     },
-  })
-
-  logseq.Editor.registerSlashCommand(
-    '💥 Big Bang',
-    [
-      // [
-      //   'editor/input',
-      //   '{{renderer 1 2 3}}',
-      //   {
-      //     'last-pattern': '/',
-      //     'backward-pos': 2,
-      //   },
-      // ]
-      [
-        'editor/hook',
-        'helloSlashCommand',
-      ],
-      ['editor/clear-current-slash'],
-    ],
   )
 
   logseq.Editor.registerBlockContextMenu('🦜 Send A Tweet',
@@ -39,5 +20,5 @@ function main () {
     })
 }
 
-//bootstrap
-logseq.ready().then(main)
+// bootstrap
+logseq.ready(main).catch(console.error)
