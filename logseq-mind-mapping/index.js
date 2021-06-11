@@ -20,13 +20,15 @@ function main () {
     zIndex: 12,
   })
 
-  logseq.App.onPageFileMounted(({ slot }) => {
+  logseq.App.onPageHeadActionsSlotted(({ slot }) => {
     logseq.provideUI({
       key: 'hook-ui-page-file-mounted',
       slot,
       template: `
-          <a data-on-click="openMindMap">
-            <i class="iconfont icon-mind-map"></i>
+          <a data-on-click="openMindMap" 
+             style="opacity: .5; position: relative; top: -3px; padding-right: 8px;"
+             title="Open Mind Mapping Canvas">
+            <i class="iconfont icon-mind-map" style="font-size: 17px;"></i>
           </a>
         `,
     })
