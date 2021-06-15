@@ -2,6 +2,18 @@
 
 This is a journals calendar sample that show you how to use DB query api :)
 
+### Demo
+
+![demo](./demo.gif)
+
+### API
+
+[![npm version](https://badge.fury.io/js/%40logseq%2Flibs.svg)](https://badge.fury.io/js/%40logseq%2Flibs)
+
+##### Logseq.DB
+
+- `datascriptQuery: <T = any>(query: string) => Promise<T>`
+
 ### Running the Sample
 
 - `npm install && npm run build` in terminal to install dependencies.

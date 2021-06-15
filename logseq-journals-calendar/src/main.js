@@ -1,3 +1,4 @@
+import '@logseq/libs'
 import { createApp } from 'vue'
 import App from './App.vue'
 import './index.css'
@@ -35,7 +36,6 @@ function main () {
       font-weight: 500;
       position: relative;
       top: 0px;
-      padding: 0 5px;
     }
     
     div[data-injected-ui=open-calendar-${key}]:hover {
@@ -48,10 +48,9 @@ function main () {
     key: 'open-calendar',
     path: '#search',
     template: `
-      <a data-on-click="openCalendar" onclick="alert('abc')" style="opacity: .6; display: inline-flex; padding-left: 3px;">
+      <a data-on-click="openCalendar" style="opacity: .6; display: inline-flex; padding-left: 3px; position: relative; bottom: -3px;">
         <i class="iconfont icon-Calendaralt2"></i>
       </a>
-      <iframe src="https://google.com"></iframe>
     `,
   })
 
