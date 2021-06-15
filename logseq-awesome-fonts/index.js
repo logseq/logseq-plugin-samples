@@ -175,7 +175,9 @@ function main () {
     [data-injected-ui='awesome-fonts-btn-${id}'] {
       display: flex;
       align-items: center;
-      padding: 0 5px;
+      padding: 0 10px;
+      position: relative;
+      top: 3px;
     }
     
     [data-on-click=openFontsPanel] {

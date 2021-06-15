@@ -869,11 +869,12 @@
   resolved "https://registry.yarnpkg.com/@iarna/toml/-/toml-2.2.5.tgz#b32366c89b43c6f8cefbdefac778b9c828e3ba8c"
   integrity sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==
 
-"@logseq/libs@^0.0.1-alpha.6":
-  version "0.0.1-alpha.6"
-  resolved "https://registry.yarnpkg.com/@logseq/libs/-/libs-0.0.1-alpha.6.tgz#7bdec8929b4fdae777fae904156b7b0e492a8c4a"
-  integrity sha512-Ta9OSoB5RfhxYlrokSyVjFp6skPkQHmmdRxjr3AVKzmJGJ6GgIBJUQHMgRgqJUHAY3on//UInZ0844q8xFqk2A==
+"@logseq/libs@^0.0.1-alpha.16":
+  version "0.0.1-alpha.17"
+  resolved "https://registry.yarnpkg.com/@logseq/libs/-/libs-0.0.1-alpha.17.tgz#864bfbb8a480c05de8c5db512dabb72466450fb1"
+  integrity sha512-M67FKgJOIJosEEHJ1Ktb+TD2KYFj/R/RSZosgRD97+o5D0p8SbJ5ptyFULm1m7D1OReoc3tVHHE0HRbBRqFEyg==
   dependencies:
+    csstype "^3.0.8"
     debug "^4.3.1"
     dompurify "^2.2.7"
     eventemitter3 "^4.0.7"
@@ -1889,6 +1890,11 @@ cssstyle@^1.1.1:
   integrity sha512-GBrLZYZ4X4x6/QEoBnIrqb8B/f5l4+8me2dkom/j1Gtbxy0kBv6OGzKuAsGM75bkGwGAFkt56Iwg28S3XTZgSA==
   dependencies:
     cssom "0.3.x"
+
+csstype@^3.0.8:
+  version "3.0.8"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.8.tgz#d2266a792729fb227cd216fb572f43728e1ad340"
+  integrity sha512-jXKhWqXPmlUeoQnF/EhTtTl4C9SnrxSH/jZUih3jmO6lBKr99rP3/+FmrMj4EFpOXzMtXHAZkd3x0E6h6Fgflw==
 
 dashdash@^1.12.0:
   version "1.14.1"
