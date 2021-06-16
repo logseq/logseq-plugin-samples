@@ -6,10 +6,11 @@
   "author": "©Charlie",
   "license": "MIT",
   "scripts": {
-    "dev": "parcel ./index.html --public-url ./"
+    "dev": "parcel ./index.html --public-url ./",
+    "build": "parcel build --public-url . --no-source-maps index.html"
   },
   "devDependencies": {
-    "@logseq/libs": "^0.0.1-alpha.16",
+    "@logseq/libs": "^0.0.1-alpha.19",
     "parcel": "^2.0.0-beta.2"
   },
   "dependencies": {

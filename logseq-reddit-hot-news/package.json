@@ -1,0 +1,25 @@
+{
+  "name": "logseq-reddit-hot-news",
+  "version": "0.0.1",
+  "description": "Read r/logseq hot news using Logseq blocks.",
+  "main": "dist/index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/logseq/logseq-plugin-samples/tree/master/logseq-reddit-hot-news"
+  },
+  "author": "Logseq",
+  "scripts": {
+    "dev": "parcel ./index.html --public-url ./",
+    "build": "parcel build --public-url . --no-source-maps index.html"
+  },
+  "license": "MIT",
+  "logseq": {
+    "id": "_rw0rys037"
+  },
+  "dependencies": {
+    "@logseq/libs": "^0.0.1-alpha.19"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0-beta.2"
+  }
+}
