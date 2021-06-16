@@ -9,6 +9,15 @@ You need to have [node](https://nodejs.org/) and [npm(or yarn)](https://yarnpkg.
 on your system to run the examples. Then install the latest Logseq Desktop App
 from [here](https://github.com/logseq/logseq/releases).
 
+#### Using `nvm` to install `node` and `npm`
+
+For those who are not familiar with the installation of Node.js and NPM, a simple solution would be to install **Node Version Manager (NVM)**[(link)](https://github.com/nvm-sh/nvm). The installation is straighforward: just download and run the [installation bash script](https://github.com/nvm-sh/nvm/blob/v0.38.0/install.sh). You may need to give access permissions to the script.
+
+After installing `nvm`, using the command `nvm install 16`(for current) or `nvm install 14`(for LTS), youll be able to unstall install the current version of node and npm on your machine. Because `nvm` installs locally, there is not need for the `sudo` command. 
+ 
+For those familiar, `nvm` acts similarly to `anaconda`: the same way you can select your version of python with anaconda, you can choose your version of node.js. 
+
+
 ### Usage
 
 - `git clone https://github.com/logseq/logseq-plugin-samples`
