@@ -34,7 +34,8 @@ function main (baseInfo: LSPluginBaseInfo) {
       const blockTitle = (new Date()).toLocaleString()
 
       logseq.App.pushState('page', { name: pageName })
-      await delay(500)
+
+      await delay(300)
 
       loading = true
       patchActionUI()
@@ -46,11 +47,9 @@ function main (baseInfo: LSPluginBaseInfo) {
         const pageBlocksTree = await logseq.Editor.getCurrentPageBlocksTree()
         let targetBlock = pageBlocksTree[0]!
 
-        await logseq.Editor.updateBlock(targetBlock.uuid, '🚀 Fetching r/logseq ...')
+        targetBlock = await logseq.Editor.insertBlock(targetBlock.uuid, '🚀 Fetching r/logseq ...', { before: true })
 
         let blocks = await loadRedditData()
-
-        // await logseq.Editor.insertBlock(targetBlock.uuid, '🚀 Fetching r/logseq ...', { sibling: true })
 
         blocks = blocks.map(it => ({ content: it }))
 
@@ -64,7 +63,7 @@ function main (baseInfo: LSPluginBaseInfo) {
         console.error(e)
       } finally {
         loading = false
-        // patchActionUI()
+        patchActionUI()
       }
     }
   })
