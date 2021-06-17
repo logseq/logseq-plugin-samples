@@ -154,7 +154,6 @@ function initMindMap (el, btnClose, data) {
 
   const patchRightBottomBar = () => {
     const barWrap = document.querySelector('toolbar.rb')
-    barWrap.innerHTML = ''
     barWrap.appendChild(btnClose)
   }
 
