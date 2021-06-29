@@ -38,7 +38,6 @@ function main (baseInfo: LSPluginBaseInfo) {
       await delay(300)
 
       loading = true
-      patchActionUI()
 
       try {
         const currentPage = await logseq.Editor.getCurrentPage()
@@ -63,43 +62,25 @@ function main (baseInfo: LSPluginBaseInfo) {
         console.error(e)
       } finally {
         loading = false
-        patchActionUI()
       }
     }
   })
 
-  const patchActionUI = () => {
-    logseq.provideUI({
-      key: 'logseq-reddit',
-      path: '#search',
-      template: `
-      <a data-on-click="loadReddits" 
-         class="${loading ? 'loading' : ''}"
-      >
+  logseq.App.registerUIItem('toolbar', {
+    key: 'logseq-reddit',
+    template: `
+      <a data-on-click="loadReddits">
         ${svgReddit()}
       </a>
     `
-    })
-  }
+  })
 
   logseq.provideStyle(`
     [data-injected-ui=logseq-reddit-${baseInfo.id}] {
       display: flex;
       align-items: center;
     }
-    
-    [data-injected-ui=logseq-reddit-${baseInfo.id}] a {
-      position: relative;
-      top: 3px;
-      opacity: .5;
-    }
-    
-    [data-injected-ui=logseq-reddit-${baseInfo.id}] a:hover {
-      opacity: 1;
-    }
   `)
-
-  patchActionUI()
 }
 
 // bootstrap

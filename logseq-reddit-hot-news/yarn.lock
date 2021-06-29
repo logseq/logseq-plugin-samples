@@ -956,10 +956,10 @@
   resolved "https://registry.yarnpkg.com/@iarna/toml/-/toml-2.2.5.tgz#b32366c89b43c6f8cefbdefac778b9c828e3ba8c"
   integrity sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==
 
-"@logseq/libs@^0.0.1-alpha.20":
-  version "0.0.1-alpha.20"
-  resolved "https://registry.yarnpkg.com/@logseq/libs/-/libs-0.0.1-alpha.20.tgz#ba8dc474b04953a86f2392ba3fcaa3290caff396"
-  integrity sha512-uBfd9y1FTHkqz9sbOe/BZs+OEnLkcRkL8Hm2N+Z6nSAp1+eILisIceNt2ROexzDgChh5i8oQows0hClw80QC4w==
+"@logseq/libs@^0.0.1-alpha.22":
+  version "0.0.1-alpha.22"
+  resolved "https://registry.yarnpkg.com/@logseq/libs/-/libs-0.0.1-alpha.22.tgz#105943955ed704cc26f11b3046460324efa1d0fa"
+  integrity sha512-D6EUoXnRqFNwwK0MuTngKS3H348SWva9+BMjnxNtdP7EHQVyCW3DSFQX4vjeVmw648fk2gt1FPmBAv+aAV6e0A==
   dependencies:
     csstype "^3.0.8"
     debug "^4.3.1"

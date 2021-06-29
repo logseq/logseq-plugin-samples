@@ -171,26 +171,6 @@ function main () {
   logseq.provideStyle(`
     @import url("https://at.alicdn.com/t/font_2409735_r7em724douf.css");
     @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC&family=Prata&family=PT+Sans&family=Nunito&display=swap');
-  
-    [data-injected-ui='awesome-fonts-btn-${id}'] {
-      display: flex;
-      align-items: center;
-      padding: 0 10px;
-      position: relative;
-      top: 3px;
-    }
-    
-    [data-on-click=openFontsPanel] {
-      font-weight: 600; 
-      opacity: .4; 
-      display: inline-flex; 
-      padding-left: 5px;
-    }
-    
-    [data-on-click=openFontsPanel]:hover,
-    [data-on-click=openFontsPanel]:active {
-      opacity: .8; 
-    }
   `)
 
   logseq.setMainUIInlineStyle({
@@ -200,17 +180,19 @@ function main () {
     transform: 'translateX(-50%)',
   })
 
-  logseq.provideUI({
-    key: 'awesome-fonts-btn',
-    path: '#search',
-    template: `
-        <a data-on-click="openFontsPanel" 
+  logseq.App.registerUIItem('toolbar',
+    {
+      key: 'awesome-fonts-btn',
+      template: `
+        <a 
+           style="font-weight: bold"
+           data-on-click="openFontsPanel" 
            data-rect
         >
           <i class="iconfont icon-font"></i>
         </a>
     `,
-  })
+    })
 
   document.addEventListener('keydown', function (e) {
     if (e.keyCode === 27) {
