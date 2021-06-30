@@ -12,7 +12,7 @@ function createModel () {
 
 function main () {
   logseq.provideStyle(`
-    @import url("https://at.alicdn.com/t/font_2409735_r7em724douf.css");
+    @import url("https://at.alicdn.com/t/font_2409735_lkeod9mm2ej.css");
   `)
 
   logseq.setMainUIInlineStyle({
@@ -20,18 +20,13 @@ function main () {
     zIndex: 12,
   })
 
-  logseq.App.onPageHeadActionsSlotted(({ slot }) => {
-    logseq.provideUI({
-      key: 'hook-ui-page-file-mounted',
-      slot,
-      template: `
-          <a data-on-click="openMindMap" 
-             style="opacity: .5; position: relative; top: -3px; padding-right: 8px;"
-             title="Open Mind Mapping Canvas">
-            <i class="iconfont icon-mind-map" style="font-size: 17px;"></i>
-          </a>
-        `,
-    })
+  logseq.App.registerUIItem('pagebar', {
+    key: 'another-open-mind2',
+    template: `
+     <a data-on-click="openMindMap" title="open mind map">
+       <i class="iconfont icon-icons-mind_map" style="font-size: 18px; line-height: 1em;"></i> 
+     </a> 
+    `,
   })
 
   // main ui
