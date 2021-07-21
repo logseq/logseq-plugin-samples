@@ -1,3 +1,5 @@
+/// <reference types="svelte" />
+
 import "@logseq/libs";
 import { css } from "./util";
 import App from "./App.svelte";
@@ -18,7 +20,6 @@ function main() {
   const key = logseq.baseInfo.id;
 
   logseq.setMainUIInlineStyle({
-    // @ts-expect-error will be fixed later
     zIndex: 11
   });
 
@@ -38,7 +39,6 @@ function main() {
     }
   `);
 
-  // @ts-expect-error will be fixed later
   logseq.provideUI({
     key: "open-query-playground",
     path: "#search",
