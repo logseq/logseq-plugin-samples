@@ -3,6 +3,8 @@
 This repository contains sample code illustrating the Logseq Plugin API. You can read, play with or adapt from these
 samples to create your own plugins.
 
+Plugins API: https://logseq.github.io/plugins/
+
 ### Prerequisites
 
 You need to have [node](https://nodejs.org/) and [npm(or yarn)](https://yarnpkg.com/getting-started/install) installed
