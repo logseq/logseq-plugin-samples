@@ -44,10 +44,10 @@
   dependencies:
     vary "^1.1.2"
 
-"@logseq/libs@^0.0.1-alpha.17":
-  version "0.0.1-alpha.17"
-  resolved "https://registry.yarnpkg.com/@logseq/libs/-/libs-0.0.1-alpha.17.tgz#864bfbb8a480c05de8c5db512dabb72466450fb1"
-  integrity sha512-M67FKgJOIJosEEHJ1Ktb+TD2KYFj/R/RSZosgRD97+o5D0p8SbJ5ptyFULm1m7D1OReoc3tVHHE0HRbBRqFEyg==
+"@logseq/libs@^0.0.1-alpha.26":
+  version "0.0.1-alpha.26"
+  resolved "https://registry.yarnpkg.com/@logseq/libs/-/libs-0.0.1-alpha.26.tgz#f96aee10cf8e7f65fdc59b88e00bb8f1968072c1"
+  integrity sha512-KmgK+SzMuNPnIoI3Prg5P8upYezIqGI6FqB55atCyNHXK3tbkVOw6Qev5hyj9gM2r2RaKLEXQhz0TBHBrrlBSg==
   dependencies:
     csstype "^3.0.8"
     debug "^4.3.1"
