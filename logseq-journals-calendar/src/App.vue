@@ -43,8 +43,10 @@ export default {
   },
 
   mounted () {
-    logseq.App.onThemeModeChanged((label) => {
-      this.opts[`is-dark`] = label === 'dark'
+    logseq.App.getUserConfigs()
+      .then(c => this.opts[`is-dark`] = c.preferredThemeMode === 'dark');
+    logseq.App.onThemeModeChanged(({mode}) => {
+      this.opts[`is-dark`] = mode === 'dark'
     })
 
     this.$watch('mDate', () => {
