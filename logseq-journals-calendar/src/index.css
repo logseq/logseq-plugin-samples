@@ -20,7 +20,6 @@ html, body {
 
 .calendar-inner {
   position: absolute;
-  right: 140px;
   top: 50px;
 }
 
