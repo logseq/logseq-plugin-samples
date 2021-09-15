@@ -2,19 +2,11 @@
   "name": "logseq-hello-world",
   "version": "0.0.1",
   "author": "©Logseq Team",
-  "main": "dist/index.html",
+  "main": "index.html",
   "description": "📖 Hello, Logseq :)",
   "license": "MIT",
-  "scripts": {
-    "dev": "parcel index.html",
-    "build": "parcel build --public-url . --no-source-maps index.html"
-  },
-  "dependencies": {
-    "@logseq/libs": "^0.0.1-alpha.16"
-  },
   "devDependencies": {
-    "parcel-bundler": "^1.12.5",
-    "typescript": "^4.2.4"
+    "@logseq/libs": "^0.0.1-alpha.29"
   },
   "browserslist": [
     "chrome 80"

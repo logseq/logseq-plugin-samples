@@ -28,6 +28,10 @@ function main (baseInfo: LSPluginBaseInfo) {
 
   logseq.provideModel({
     async loadReddits () {
+
+      const info = await logseq.App.getUserConfigs()
+      console.log(info)
+      return
       if (loading) return
 
       const pageName = 'reddit-logseq-hots-news'

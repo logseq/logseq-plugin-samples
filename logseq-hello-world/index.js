@@ -1,5 +1,3 @@
-import '@logseq/libs'
-
 /**
  * entry
  */
