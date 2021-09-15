@@ -36,7 +36,7 @@ anaconda, you can choose your version of node.js.
 
 ### Getting Started
 
-- 🌱 [Hello World Sample](./logseq-hello-world)
+- 🌱 [Slash command Sample](./logseq-slash-commands)
 - 🎨 [Custom Theme Sample](./logseq-bujo-themes)
 - 🗓 [Journals Calendar Sample](./logseq-journals-calendar)
 - 🛠 [Custom Editor Fonts Sample](./logseq-awesome-fonts)

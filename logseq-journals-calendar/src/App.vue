@@ -2,7 +2,7 @@
   <div class="calendar-wrap"
        @click="_onClickOutside"
   >
-    <div class="calendar-inner" v-if="ready">
+    <div class="calendar-inner" v-if="ready" :style="{left: left+'px'}">
       <v-calendar
         :onDayclick="_onDaySelect"
         @update:to-page="_onToPage"
@@ -24,6 +24,7 @@ export default {
     const d = new Date()
     return {
       ready: false,
+      left: 0,
       journals: null,
       opts: {
         color: 'orange',
@@ -43,8 +44,10 @@ export default {
   },
 
   mounted () {
-    logseq.App.onThemeModeChanged((label) => {
-      this.opts[`is-dark`] = label === 'dark'
+    logseq.App.getUserConfigs()
+      .then(c => this.opts[`is-dark`] = c.preferredThemeMode === 'dark');
+    logseq.App.onThemeModeChanged(({mode}) => {
+      this.opts[`is-dark`] = mode === 'dark'
     })
 
     this.$watch('mDate', () => {
@@ -55,6 +58,14 @@ export default {
 
     logseq.once('ui:visible:changed', ({ visible }) => {
       visible && (this.ready = true)
+    })
+
+    logseq.on('ui:visible:changed', ({ visible }) => {
+      if (visible) {
+        const el = top.document.querySelector(`div[data-injected-ui=open-calendar-_zsmbaoekb]`)
+        const {left} = el.getBoundingClientRect()
+        this.left = left - 110
+      }
     })
   },
 
