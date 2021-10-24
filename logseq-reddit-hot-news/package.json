@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Read r/logseq hot news using Logseq blocks.",
   "main": "dist/index.html",
+  "targets": { "main": false },
   "repository": {
     "type": "git",
     "url": "https://github.com/logseq/logseq-plugin-samples/tree/master/logseq-reddit-hot-news"
