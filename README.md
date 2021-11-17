@@ -39,6 +39,7 @@ anaconda, you can choose your version of node.js.
 - 🌱 [Slash command Sample](./logseq-slash-commands)
 - 🎨 [Custom Theme Sample](./logseq-bujo-themes)
 - 🗓 [Journals Calendar Sample](./logseq-journals-calendar)
+- 🍅 [Pomodoro Timer Sample](./logseq-pomodoro-timer)
 - 🛠 [Custom Editor Fonts Sample](./logseq-awesome-fonts)
 - 😀 [Emoji Picker Sample](./logseq-emoji-picker)
 - 📰 [Reddit Hot News Sample](./logseq-reddit-hot-news)

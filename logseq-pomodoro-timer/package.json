@@ -1,0 +1,21 @@
+{
+  "name": "logseq-pomodoro-timer",
+  "version": "0.0.1",
+  "description": "A joyful pomodoro timer for block task item 🍅",
+  "author": "©Charlie",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel ./index.html --public-url ./",
+    "build": "parcel build --public-url . --no-source-maps index.html"
+  },
+  "devDependencies": {
+    "@logseq/libs": "^0.0.1-alpha.31",
+    "parcel": "^2.0.0"
+  },
+  "dependencies": {},
+  "logseq": {
+    "id": "_km4vf6swk",
+    "main": "dist/index.html",
+    "icon": "./logo.png"
+  }
+}
