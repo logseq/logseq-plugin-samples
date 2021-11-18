@@ -1,0 +1,24 @@
+{
+  "name": "logseq-a-translator",
+  "version": "0.0.1",
+  "description": "A joyful translator for block text",
+  "author": "©Charlie",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel ./index.html",
+    "build": "parcel build --public-url . --no-source-maps index.html"
+  },
+  "devDependencies": {
+    "@logseq/libs": "^0.0.1-alpha.31",
+    "parcel": "^2.0.0"
+  },
+  "dependencies": {
+    "google-translate-api-browser": "^1.1.71"
+  },
+  "logseq": {
+    "main": "dist/index.html",
+    "devEntry": "http://localhost:1234",
+    "icon": "./logo.png",
+    "id": "_ifb2iwsl4"
+  }
+}
