@@ -4,7 +4,7 @@ This is sample that show you how to use float ui container to display custom con
 
 ### Demo
 
-![demo](./logo.png)
+![demo](./demo.gif)
 
 ### API
 
