@@ -17,7 +17,6 @@
   },
   "logseq": {
     "main": "dist/index.html",
-    "devEntry": "http://localhost:1234",
     "icon": "./logo.png",
     "id": "_ifb2iwsl4"
   }
