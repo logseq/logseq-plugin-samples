@@ -2,6 +2,8 @@
 
 This is a journals calendar sample that show you how to use DB query api :)
 
+### 👉 Maintain here https://github.com/xyhp915/logseq-journals-calendar
+
 ### Demo
 
 ![demo](./demo.gif)
