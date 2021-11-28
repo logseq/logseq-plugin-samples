@@ -32,7 +32,8 @@ anaconda, you can choose your version of node.js.
 - open the toolbar dot menus and navigate to plugins page
 - read the README file of the sample you want to load, then determine if it should be
   rebuilt (`npm install && npm run build`)
-- click `Load unpacked package` button, then select the sample directory to load it
+- navigate to the plugins dashboard: <kbd>t</kbd><kbd>p</kbd>
+- click `Load unpacked plugin` button, then select the sample directory to load it
 
 ### Getting Started
 
