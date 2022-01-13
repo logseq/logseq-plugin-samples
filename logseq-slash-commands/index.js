@@ -12,7 +12,7 @@ function main () {
     },
   )
 
-  logseq.Editor.registerBlockContextMenu('🦜 Send A Tweet',
+  logseq.Editor.registerBlockContextMenuItem('🦜 Send A Tweet',
     ({ blockId }) => {
       logseq.App.showMsg(
         '🦜 Tweet from block content #' + blockId,
