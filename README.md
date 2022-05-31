@@ -3,7 +3,7 @@
 This repository contains sample code illustrating the Logseq Plugin API. You can read, play with or adapt from these
 samples to create your own plugins.
 
-Plugins API: https://plugins-doc.logseq.com
+Plugin APIs: https://plugins-doc.logseq.com
 
 ### Prerequisites
 
