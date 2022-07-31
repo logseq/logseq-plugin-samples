@@ -1,7 +1,7 @@
 {
   "name": "logseq-slash-commands",
   "version": "0.0.1",
-  "description": "Support more actions from  custom editor slash command.",
+  "description": "Support more actions from custom editor slash command.",
   "main": "index.html",
   "author": "Charlie",
   "license": "MIT",
