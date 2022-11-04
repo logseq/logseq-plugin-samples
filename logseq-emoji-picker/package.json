@@ -20,5 +20,8 @@
   "logseq": {
     "id": "charlie_emoji_picker_yo5bzxaca",
     "icon": "./logo.png"
+  },
+  "dependencies": {
+    "@joeattardi/emoji-button": "^4.6.4"
   }
 }
