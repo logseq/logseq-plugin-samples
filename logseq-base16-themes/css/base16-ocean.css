@@ -41,7 +41,7 @@
     --ls-block-highlight-color: var(--base02);
     --ls-page-checkbox-color: var(--base01);
     --ls-page-checkbox-border-color: var(--ls-primary-background-color);
-    --ls-page-blockquote-color: var(--ls-tertiary-backgorund-color);
+    --ls-page-blockquote-color: var(--ls-secondary-text-color);
     --ls-page-blockquote-border-color: var(--ls-secondary-text-color);
     --ls-page-inline-code-color: var(--ls-primary-text-color);
     --ls-page-inline-code-bg-color: var(--base01);
