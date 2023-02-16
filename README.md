@@ -35,6 +35,9 @@ anaconda, you can choose your version of node.js.
 - navigate to the plugins dashboard: <kbd>t</kbd><kbd>p</kbd>
 - click `Load unpacked plugin` button, then select the sample directory to load it
 
+>  ⚠️ To avoid loading plugin failures occasionally and for performance reasons, 
+> it is recommended to keep the plugin SDK as up-to-date as possible.
+
 ### Getting Started
 
 - 🌱 [Slash command Sample](./logseq-slash-commands)
