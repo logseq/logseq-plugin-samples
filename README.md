@@ -36,7 +36,7 @@ anaconda, you can choose your version of node.js.
 - click `Load unpacked plugin` button, then select the sample directory to load it
 
 >  ⚠️ To avoid loading plugin failures occasionally and for performance reasons, 
-> it is recommended to keep the plugin SDK as up-to-date as possible.
+> it is recommended to keep the plugin SDK [`@logseq/libs`](https://www.npmjs.com/package/@logseq/libs) as up-to-date as possible.
 
 ### Getting Started
 
