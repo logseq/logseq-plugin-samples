@@ -1,6 +1,6 @@
 # Logseq BuJo Themes
 
-🎨 A Gorgeous Theme from https://piotrsss.github.io/logseq-tools/public/#/bujo-themes
+🎨 A gorgeous [BuJo Theme](https://github.com/stdword/logseq-bujo-theme) ☕️
 
 ### API 
 
@@ -33,4 +33,4 @@ Append `logseq#themes` schema in `package.json`
 
 ### Links
 
-https://github.com/PiotrSss/logseq-bujo-theme
+- ☕️ [BuJo Theme](https://github.com/stdword/logseq-bujo-theme)
