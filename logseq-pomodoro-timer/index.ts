@@ -88,7 +88,7 @@ async function main () {
     if (!startTime) return
     const durationTime = (durationMins || 25) * 60 // default 20 minus
 
-    const keepKey = `${pomoId}-${slotId}-${logseq.baseInfo.id}`
+    const keepKey = `${logseq.baseInfo.id}--${pomoId}`
     const keepOrNot = () => logseq.App.queryElementById(keepKey)
 
     function _render (init: boolean) {
