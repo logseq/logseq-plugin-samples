@@ -39,12 +39,10 @@ function main() {
     }
   `);
 
-  logseq.provideUI({
+  logseq.App.registerUIItem('toolbar', {
     key: "open-query-playground",
-    path: "#search",
     template: `
-      <a data-on-click="openQueryPlayground"
-         style="opacity: .6; display: inline-flex;">🗄</a>
+      <a data-on-click="openQueryPlayground" class="button" style="font-size: 20px">🗄</a>
     `,
   });
 }
