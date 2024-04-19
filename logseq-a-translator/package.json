@@ -9,7 +9,7 @@
     "build": "parcel build --public-url . --no-source-maps index.html"
   },
   "devDependencies": {
-    "@logseq/libs": "^0.0.15",
+    "@logseq/libs": "^0.0.17",
     "parcel": "2.9.3"
   },
   "dependencies": {
@@ -17,7 +17,6 @@
   },
   "logseq": {
     "main": "dist/index.html",
-    "devEntry": "http://localhost:1234",
     "icon": "./logo.png",
     "id": "_ifb2iwsl4"
   }

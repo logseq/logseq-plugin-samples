@@ -8,7 +8,7 @@ const translate = setCORS('https://thingproxy.freeboard.io/fetch/')
  * main entry
  */
 async function main () {
-  logseq.App.showMsg('hello, a translator :)')
+  logseq.UI.showMsg('hello, a translator :)')
 
   logseq.Editor.onInputSelectionEnd((e) => {
     const { x, y } = e.point
