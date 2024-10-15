@@ -18,7 +18,7 @@ Version Manager (NVM)**[(link)](https://github.com/nvm-sh/nvm). The installation
 run the [installation bash script](https://github.com/nvm-sh/nvm/blob/v0.38.0/install.sh). You may need to give access
 permissions to the script.
 
-After installing `nvm`, using the command `nvm install 16`(for current) or `nvm install 14`(for LTS), you'll be able to
+After installing `nvm`, using the command `nvm install 22`(for current) or `nvm install 20`(for LTS), you'll be able to
 install the current version of node and npm on your machine. Because `nvm` installs locally, there is no need
 for the `sudo` command.
 
