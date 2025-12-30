@@ -14,14 +14,14 @@
   "author": "Logseq",
   "scripts": {
     "dev": "parcel ./index.html --public-url ./",
-    "build": "parcel build --public-url . --no-source-maps index.html"
+    "build": "parcel build --public-url . --no-source-maps index.html && cp hot.json dist/hot.json"
   },
   "license": "MIT",
   "logseq": {
     "id": "_rw0rys037"
   },
   "dependencies": {
-    "@logseq/libs": "^0.0.1-alpha.22"
+    "@logseq/libs": "^0.2.10"
   },
   "devDependencies": {
     "parcel": "^2.0.0"
