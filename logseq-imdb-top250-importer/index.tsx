@@ -25,6 +25,7 @@ const App: React.FC = () => {
   const [top250Data, setTop250Data] = React.useState<Movie[]>([])
   const [groupBy, setGroupBy] = React.useState<GroupByOption>('none')
   const [collapsedGroups, setCollapsedGroups] = React.useState<Set<string>>(new Set())
+  const [importing, setImporting] = React.useState<boolean>(false)
 
   React.useEffect(() => {
     readTop250JsonData().then(data => {
@@ -119,6 +120,63 @@ const App: React.FC = () => {
     setCollapsedGroups(new Set())
   }
 
+  // create item metadata logseq properties
+  const createRelatedMetadataProperties = async () => {
+    const ratingProp = await logseq.Editor.upsertProperty('rating', { type: 'number' })
+    const directorProp = await logseq.Editor.upsertProperty('director')
+    const genreProp = await logseq.Editor.upsertProperty('genre', { cardinality: 'many' })
+    const yearProp = await logseq.Editor.upsertProperty('year', { type: 'number' })
+
+    console.log(
+        'Ensured metadata properties:',
+        { ratingProp, directorProp, genreProp, yearProp },
+    )
+  }
+
+  // import single item to Logseq (for DB only)
+  const importItemToLogseq = async (movie: Movie) => {
+    const pageTitle = movie.name
+    const pageContent = `**Year:** ${movie.datePublished ? new Date(movie.datePublished).getFullYear() : 'N/A'}
+**Rating:** ${movie.aggregateRating?.ratingValue ?? 'N/A'} (${movie.aggregateRating?.ratingCount ?? 'N/A'} votes)
+**Director:** ${movie.director?.[0]?.name ?? 'N/A'}
+**Genre:** ${movie.genre.join(', ')}`
+
+    try {
+      const page = await logseq.Editor.createPage(pageTitle, {}, { createFirstBlock: true })
+      await logseq.Editor.appendBlockInPage(page!.uuid, pageContent)
+      console.log(`Imported "${pageTitle}" to Logseq.`)
+    } catch (error) {
+      console.error(`Failed to import "${pageTitle}":`, error)
+    }
+  }
+
+  // import all items to Logseq
+  const importAllToLogseq = async () => {
+    if (importing) return
+    setImporting(true)
+    let debugCounter = 0
+
+    // Ensure metadata properties exist
+    await logseq.UI.showMsg('Creating related metadata properties...', 'info')
+    await createRelatedMetadataProperties()
+
+    try {
+      for (const movie of top250Data) {
+        // Debug: limit to 10 items
+        if (++debugCounter > 10) break
+
+        await importItemToLogseq(movie)
+
+        // Throttle to avoid overwhelming Logseq
+        await new Promise(resolve => setTimeout(resolve, 100))
+      }
+    } catch (error) {
+      await logseq.UI.showMsg(`Error during import: ${error}`, 'error')
+    } finally {
+      setImporting(false)
+    }
+  }
+
   const allCollapsed = Object.keys(groupedData).length > 0 &&
       Object.keys(groupedData).every(key => collapsedGroups.has(key))
 
@@ -150,6 +208,13 @@ const App: React.FC = () => {
       <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"
            style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '0.5rem' }}>
         <path d="M5 1v2H3v2H1V1h4zm6 0h4v4h-2V3H9V1zm0 14v-2h2v-2h2v4H11zM5 15H1v-4h2v2h2v2z"/>
+      </svg>
+  )
+
+  const ImportIcon = () => (
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"
+           style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '0.5rem' }}>
+        <path d="M8 1v10M8 11l-4-4M8 11l4-4M3 13h10v2H3v-2z"/>
       </svg>
   )
 
@@ -188,8 +253,8 @@ const App: React.FC = () => {
               </div>
             </div>
 
-            {groupBy !== 'none' && (
-                <div className="control" style={{ marginLeft: '1rem', display: 'flex', alignItems: 'flex-end' }}>
+            <div className="control is-flex is-align-items-center is-gap-2">
+              {groupBy !== 'none' && (
                   <button
                       className="button"
                       onClick={allCollapsed ? expandAll : collapseAll}
@@ -198,8 +263,17 @@ const App: React.FC = () => {
                     {allCollapsed ? <ExpandIcon/> : <CompressIcon/>}
                     <span>{allCollapsed ? 'Expand All' : 'Collapse All'}</span>
                   </button>
-                </div>
-            )}
+
+              )}
+              <button
+                  className="button is-primary"
+                  onClick={importAllToLogseq}
+                  disabled={importing}
+              >
+                <ImportIcon/>
+                <span>{importing ? 'Importing...' : 'Import All to Logseq'}</span>
+              </button>
+            </div>
           </div>
 
           {Object.entries(groupedData).map(([groupName, movies]) => {
