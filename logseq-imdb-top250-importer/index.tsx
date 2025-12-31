@@ -12,6 +12,11 @@ interface Movie {
   }
   genre: string[]
   director: Array<{ name: string }>
+  description: string
+  duration: string
+  image: string
+  url: string
+  keywords: string
 }
 
 type GroupByOption = 'none' | 'year' | 'rating' | 'director' | 'decade'
@@ -96,7 +101,6 @@ const App: React.FC = () => {
     } else {
       setCollapsedGroups(new Set())
     }
-    // groupedData 变化会跟随 groupBy/top250Data 变化，这里一并纳入依赖，避免 stale closure
   }, [groupBy, groupedData])
 
   const toggleGroup = (groupName: string) => {
@@ -122,31 +126,76 @@ const App: React.FC = () => {
 
   // create item metadata logseq properties
   const createRelatedMetadataProperties = async () => {
+    const covertProp = await logseq.Editor.upsertProperty('cover', { type: 'string' })
     const ratingProp = await logseq.Editor.upsertProperty('rating', { type: 'number' })
     const directorProp = await logseq.Editor.upsertProperty('director')
     const genreProp = await logseq.Editor.upsertProperty('genre', { cardinality: 'many' })
     const yearProp = await logseq.Editor.upsertProperty('year', { type: 'number' })
+    const urlProp = await logseq.Editor.upsertProperty('url', { type: 'string' })
+    const durationProp = await logseq.Editor.upsertProperty('duration', { type: 'string' })
+    const keywordsProp = await logseq.Editor.upsertProperty('keywords', { type: 'string' })
+
+    // create #movie tag
+    const movieTag = await logseq.Editor.createTag('movie', {})
+
+    if (!movieTag) {
+      throw new Error('Failed to create or retrieve #movie tag.')
+    }
+
+    // add property to #movie tag
+    await logseq.Editor.addTagProperty(movieTag?.uuid, 'cover')
+    await logseq.Editor.addTagProperty(movieTag?.uuid, 'url')
+    await logseq.Editor.addTagProperty(movieTag?.uuid, 'rating')
+    await logseq.Editor.addTagProperty(movieTag?.uuid, 'director')
+    await logseq.Editor.addTagProperty(movieTag?.uuid, 'genre')
+    await logseq.Editor.addTagProperty(movieTag?.uuid, 'year')
+    await logseq.Editor.addTagProperty(movieTag?.uuid, 'keywords')
+    await logseq.Editor.addTagProperty(movieTag?.uuid, 'duration')
 
     console.log(
         'Ensured metadata properties:',
-        { ratingProp, directorProp, genreProp, yearProp },
+        {
+          ratingProp, directorProp, genreProp, yearProp,
+          covertProp, urlProp, durationProp, keywordsProp,
+        },
     )
   }
 
   // import single item to Logseq (for DB only)
-  const importItemToLogseq = async (movie: Movie) => {
+  const importItemToLogseq = async (movie: Movie, tipKey?: string) => {
     const pageTitle = movie.name
-    const pageContent = `**Year:** ${movie.datePublished ? new Date(movie.datePublished).getFullYear() : 'N/A'}
-**Rating:** ${movie.aggregateRating?.ratingValue ?? 'N/A'} (${movie.aggregateRating?.ratingCount ?? 'N/A'} votes)
-**Director:** ${movie.director?.[0]?.name ?? 'N/A'}
-**Genre:** ${movie.genre.join(', ')}`
+    const pageContent = `${movie.description || 'No description available.'}`
 
     try {
       const page = await logseq.Editor.createPage(pageTitle, {}, { createFirstBlock: true })
+
+      // set page with #movie tag
+      if (!page?.uuid) {
+        throw new Error(`Failed to create page (${pageTitle}) in Logseq.`)
+      }
+
+      await logseq.Editor.addBlockTag(page?.uuid, 'movie')
+      // set page properties value
+      await logseq.Editor.upsertBlockProperty(page!.uuid, 'cover', movie.image || '')
+      await logseq.Editor.upsertBlockProperty(page!.uuid, 'url', movie.url || '')
+      await logseq.Editor.upsertBlockProperty(page!.uuid, 'rating', movie.aggregateRating?.ratingValue || 0)
+      await logseq.Editor.upsertBlockProperty(page!.uuid, 'director',
+          movie.director?.map(d => `[[${d.name}]]`).join(' ') || '')
+      await logseq.Editor.upsertBlockProperty(page!.uuid, 'genre', movie.genre || [])
+      const year = movie.datePublished ? new Date(movie.datePublished).getFullYear() : null
+      await logseq.Editor.upsertBlockProperty(page!.uuid, 'year', year || '')
+      await logseq.Editor.upsertBlockProperty(page!.uuid, 'duration', movie.duration || '')
+      await logseq.Editor.upsertBlockProperty(page!.uuid, 'keywords', movie.keywords || '')
+
+      // set first block content
       await logseq.Editor.appendBlockInPage(page!.uuid, pageContent)
+      if (tipKey) {
+        await logseq.UI.showMsg(`Importing "${pageTitle}"...`, 'info', { timeout: 0, key: tipKey })
+      }
       console.log(`Imported "${pageTitle}" to Logseq.`)
-    } catch (error) {
+    } catch (error: any) {
       console.error(`Failed to import "${pageTitle}":`, error)
+      await logseq.UI.showMsg(`${error.toString()}`, 'error')
     }
   }
 
@@ -157,7 +206,7 @@ const App: React.FC = () => {
     let debugCounter = 0
 
     // Ensure metadata properties exist
-    await logseq.UI.showMsg('Creating related metadata properties...', 'info')
+    const tipKey = await logseq.UI.showMsg('Creating related metadata properties...', 'info', { timeout: 0 })
     await createRelatedMetadataProperties()
 
     try {
@@ -165,7 +214,7 @@ const App: React.FC = () => {
         // Debug: limit to 10 items
         if (++debugCounter > 10) break
 
-        await importItemToLogseq(movie)
+        await importItemToLogseq(movie, tipKey)
 
         // Throttle to avoid overwhelming Logseq
         await new Promise(resolve => setTimeout(resolve, 100))
@@ -174,6 +223,7 @@ const App: React.FC = () => {
       await logseq.UI.showMsg(`Error during import: ${error}`, 'error')
     } finally {
       setImporting(false)
+      logseq.UI.closeMsg(tipKey)
     }
   }
 
