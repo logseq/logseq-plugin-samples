@@ -137,6 +137,7 @@ const App: React.FC = () => {
 
     // create #movie tag
     const movieTag = await logseq.Editor.createTag('movie', {})
+    const directorTag = await logseq.Editor.createTag('director', {})
 
     if (!movieTag) {
       throw new Error('Failed to create or retrieve #movie tag.')
@@ -155,7 +156,7 @@ const App: React.FC = () => {
     console.log(
         'Ensured metadata properties:',
         {
-          ratingProp, directorProp, genreProp, yearProp,
+          ratingProp, directorProp, genreProp, yearProp, directorTag,
           covertProp, urlProp, durationProp, keywordsProp,
         },
     )
@@ -175,13 +176,23 @@ const App: React.FC = () => {
       }
 
       await logseq.Editor.addBlockTag(page?.uuid, 'movie')
+
+      // create director tags
+      if (movie.director && movie.director.length > 0) {
+        for (const dir of movie.director) {
+          const page = await logseq.Editor.createTag(dir.name, {})
+          await logseq.Editor.addBlockTag(page?.uuid!, 'director')
+        }
+      }
+
       // set page properties value
       await logseq.Editor.upsertBlockProperty(page!.uuid, 'cover', movie.image || '')
       await logseq.Editor.upsertBlockProperty(page!.uuid, 'url', movie.url || '')
       await logseq.Editor.upsertBlockProperty(page!.uuid, 'rating', movie.aggregateRating?.ratingValue || 0)
       await logseq.Editor.upsertBlockProperty(page!.uuid, 'director',
           movie.director?.map(d => `[[${d.name}]]`).join(' ') || '')
-      await logseq.Editor.upsertBlockProperty(page!.uuid, 'genre', movie.genre || [])
+      // @ts-ignore
+      await logseq.Editor.upsertBlockProperty(page!.uuid, 'genre', movie.genre || [], { reset: true })
       const year = movie.datePublished ? new Date(movie.datePublished).getFullYear() : null
       await logseq.Editor.upsertBlockProperty(page!.uuid, 'year', year || '')
       await logseq.Editor.upsertBlockProperty(page!.uuid, 'duration', movie.duration || '')
