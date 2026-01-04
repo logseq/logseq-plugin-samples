@@ -9,7 +9,7 @@
     "dev": "vite"
   },
   "dependencies": {
-    "@logseq/libs": "^0.2.10",
+    "@logseq/libs": "^0.2.11",
     "bulma": "^1.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

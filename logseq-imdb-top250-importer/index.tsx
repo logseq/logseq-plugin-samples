@@ -127,11 +127,11 @@ const App: React.FC = () => {
   // create item metadata logseq properties
   const createRelatedMetadataProperties = async () => {
     const covertProp = await logseq.Editor.upsertProperty('cover', { type: 'string' })
-    const ratingProp = await logseq.Editor.upsertProperty('rating', { type: 'number' })
+    const ratingProp = await logseq.Editor.upsertProperty('rating', { type: 'string' })
     const directorProp = await logseq.Editor.upsertProperty('director')
     const genreProp = await logseq.Editor.upsertProperty('genre', { cardinality: 'many' })
-    const yearProp = await logseq.Editor.upsertProperty('year', { type: 'number' })
-    const urlProp = await logseq.Editor.upsertProperty('url', { type: 'string' })
+    const yearProp = await logseq.Editor.upsertProperty('year', { type: 'string' })
+    const urlProp = await logseq.Editor.upsertProperty('url', { type: 'default' })
     const durationProp = await logseq.Editor.upsertProperty('duration', { type: 'string' })
     const keywordsProp = await logseq.Editor.upsertProperty('keywords', { type: 'string' })
 
@@ -139,25 +139,32 @@ const App: React.FC = () => {
     const movieTag = await logseq.Editor.createTag('movie', {})
     const directorTag = await logseq.Editor.createTag('director', {})
 
-    if (!movieTag) {
+    if (!movieTag?.uuid) {
       throw new Error('Failed to create or retrieve #movie tag.')
     }
 
     // add property to #movie tag
-    await logseq.Editor.addTagProperty(movieTag?.uuid, 'cover')
-    await logseq.Editor.addTagProperty(movieTag?.uuid, 'url')
-    await logseq.Editor.addTagProperty(movieTag?.uuid, 'rating')
-    await logseq.Editor.addTagProperty(movieTag?.uuid, 'director')
-    await logseq.Editor.addTagProperty(movieTag?.uuid, 'genre')
-    await logseq.Editor.addTagProperty(movieTag?.uuid, 'year')
-    await logseq.Editor.addTagProperty(movieTag?.uuid, 'keywords')
-    await logseq.Editor.addTagProperty(movieTag?.uuid, 'duration')
+    await logseq.Editor.addTagProperty(movieTag.uuid, 'cover')
+    await logseq.Editor.addTagProperty(movieTag.uuid, 'url')
+    await logseq.Editor.addTagProperty(movieTag.uuid, 'rating')
+    await logseq.Editor.addTagProperty(movieTag.uuid, 'director')
+    await logseq.Editor.addTagProperty(movieTag.uuid, 'genre')
+    await logseq.Editor.addTagProperty(movieTag.uuid, 'year')
+    await logseq.Editor.addTagProperty(movieTag.uuid, 'keywords')
+    await logseq.Editor.addTagProperty(movieTag.uuid, 'duration')
 
     console.log(
         'Ensured metadata properties:',
         {
-          ratingProp, directorProp, genreProp, yearProp, directorTag,
-          covertProp, urlProp, durationProp, keywordsProp,
+          ratingProp,
+          directorProp,
+          genreProp,
+          yearProp,
+          directorTag,
+          covertProp,
+          urlProp,
+          durationProp,
+          keywordsProp,
         },
     )
   }
@@ -175,31 +182,36 @@ const App: React.FC = () => {
         throw new Error(`Failed to create page (${pageTitle}) in Logseq.`)
       }
 
-      await logseq.Editor.addBlockTag(page?.uuid, 'movie')
+      await logseq.Editor.addBlockTag(page.uuid, 'movie')
 
-      // create director tags
+      // create director pages and tag
       if (movie.director && movie.director.length > 0) {
         for (const dir of movie.director) {
-          const page = await logseq.Editor.createTag(dir.name, {})
-          await logseq.Editor.addBlockTag(page?.uuid!, 'director')
+          const directorPage = await logseq.Editor.createPage(dir.name, {})
+          if (directorPage?.uuid) {
+            await logseq.Editor.addBlockTag(directorPage.uuid, 'director')
+          }
         }
       }
 
       // set page properties value
-      await logseq.Editor.upsertBlockProperty(page!.uuid, 'cover', movie.image || '')
-      await logseq.Editor.upsertBlockProperty(page!.uuid, 'url', movie.url || '')
-      await logseq.Editor.upsertBlockProperty(page!.uuid, 'rating', movie.aggregateRating?.ratingValue || 0)
-      await logseq.Editor.upsertBlockProperty(page!.uuid, 'director',
-          movie.director?.map(d => `[[${d.name}]]`).join(' ') || '')
-      // @ts-ignore
-      await logseq.Editor.upsertBlockProperty(page!.uuid, 'genre', movie.genre || [], { reset: true })
-      const year = movie.datePublished ? new Date(movie.datePublished).getFullYear() : null
-      await logseq.Editor.upsertBlockProperty(page!.uuid, 'year', year || '')
-      await logseq.Editor.upsertBlockProperty(page!.uuid, 'duration', movie.duration || '')
-      await logseq.Editor.upsertBlockProperty(page!.uuid, 'keywords', movie.keywords || '')
+      await logseq.Editor.upsertBlockProperty(page.uuid, 'cover', movie.image || '')
+      await logseq.Editor.upsertBlockProperty(page.uuid, 'url', movie.url || '')
+      await logseq.Editor.upsertBlockProperty(page.uuid, 'rating', movie.aggregateRating?.ratingValue || 0)
+      await logseq.Editor.upsertBlockProperty(
+          page.uuid, 'director', movie.director?.map(d => `[[${d.name}]]`).join(' ') || '',
+          { reset: true },
+      )
+      await logseq.Editor.upsertBlockProperty(page.uuid, 'genre', movie.genre || [], { reset: true })
+
+      const year = movie.datePublished ? new Date(movie.datePublished).getFullYear() : 0
+      await logseq.Editor.upsertBlockProperty(page.uuid, 'year', year)
+
+      await logseq.Editor.upsertBlockProperty(page.uuid, 'duration', movie.duration || '')
+      await logseq.Editor.upsertBlockProperty(page.uuid, 'keywords', movie.keywords || '')
 
       // set first block content
-      await logseq.Editor.appendBlockInPage(page!.uuid, pageContent)
+      await logseq.Editor.appendBlockInPage(page.uuid, pageContent)
       if (tipKey) {
         await logseq.UI.showMsg(`Importing "${pageTitle}"...`, 'info', { timeout: 0, key: tipKey })
       }
@@ -230,6 +242,15 @@ const App: React.FC = () => {
         // Throttle to avoid overwhelming Logseq
         await new Promise(resolve => setTimeout(resolve, 100))
       }
+
+      await logseq.UI.showMsg('Import completed successfully!', 'success')
+
+      const tagMovie = await logseq.Editor.getTag('movie')
+      if (tagMovie?.uuid) {
+        logseq.App.pushState('page', { name: tagMovie.uuid })
+      }
+
+      hideMainUI()
     } catch (error) {
       await logseq.UI.showMsg(`Error during import: ${error}`, 'error')
     } finally {
@@ -439,6 +460,12 @@ function toggleMainUI () {
 
 function main () {
   console.log('logseq-imdb-top250 plugin loaded')
+
+  // Import CSS
+  logseq.provideStyle(`
+  .property-pair[data-property-title="cover"] .ls-resize-image img {
+    max-width: 200px;
+  }`)
 
   // Expose methods callable from UI (and other places)
   logseq.provideModel({
