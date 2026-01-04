@@ -44,28 +44,16 @@ Note: the current code intentionally imports only **10 movies** (demo/debug). Se
 
 ## Development (Vite)
 
-Install dependencies:
-
-```bash
-npm install
-```
-
 Run the dev server:
 
 ```bash
-npm run dev
+yarn run dev
 ```
 
 In Logseq: enable Developer mode, then load the plugin using this project folder.
 The plugin manifest is in `package.json` under the `logseq` field, and dev mode points to:
 
 - `logseq.devEntry`: `http://localhost:5173`
-
-Build for production:
-
-```bash
-npm run build
-```
 
 ## Code tour (where the DB property magic is)
 
