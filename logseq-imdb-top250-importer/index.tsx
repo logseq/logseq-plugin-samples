@@ -128,7 +128,7 @@ const App: React.FC = () => {
   const createRelatedMetadataProperties = async () => {
     const covertProp = await logseq.Editor.upsertProperty('cover', { type: 'string' })
     const ratingProp = await logseq.Editor.upsertProperty('rating', { type: 'string' })
-    const directorProp = await logseq.Editor.upsertProperty('director')
+    const directorProp = await logseq.Editor.upsertProperty('director', { type: 'node', cardinality: 'many' })
     const genreProp = await logseq.Editor.upsertProperty('genre', { cardinality: 'many' })
     const yearProp = await logseq.Editor.upsertProperty('year', { type: 'string' })
     const urlProp = await logseq.Editor.upsertProperty('url', { type: 'default' })
@@ -185,11 +185,13 @@ const App: React.FC = () => {
       await logseq.Editor.addBlockTag(page.uuid, 'movie')
 
       // create director pages and tag
+      let directorPages: any = []
       if (movie.director && movie.director.length > 0) {
         for (const dir of movie.director) {
           const directorPage = await logseq.Editor.createPage(dir.name, {})
           if (directorPage?.uuid) {
             await logseq.Editor.addBlockTag(directorPage.uuid, 'director')
+            directorPages.push(directorPage)
           }
         }
       }
@@ -198,11 +200,15 @@ const App: React.FC = () => {
       await logseq.Editor.upsertBlockProperty(page.uuid, 'cover', movie.image || '')
       await logseq.Editor.upsertBlockProperty(page.uuid, 'url', movie.url || '')
       await logseq.Editor.upsertBlockProperty(page.uuid, 'rating', movie.aggregateRating?.ratingValue || 0)
+
       await logseq.Editor.upsertBlockProperty(
-          page.uuid, 'director', movie.director?.map(d => `[[${d.name}]]`).join(' ') || '',
+          page.uuid, 'director', directorPages.map((p: any) => p.id) || [],
           { reset: true },
       )
+
       await logseq.Editor.upsertBlockProperty(page.uuid, 'genre', movie.genre || [], { reset: true })
+      // TODO: add existing genres as closed choices values
+      // await logseq.Editor.add
 
       const year = movie.datePublished ? new Date(movie.datePublished).getFullYear() : 0
       await logseq.Editor.upsertBlockProperty(page.uuid, 'year', year)
