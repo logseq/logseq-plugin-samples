@@ -129,7 +129,7 @@ const App: React.FC = () => {
     const covertProp = await logseq.Editor.upsertProperty('cover', { type: 'string' })
     const ratingProp = await logseq.Editor.upsertProperty('rating', { type: 'string' })
     const directorProp = await logseq.Editor.upsertProperty('director', { type: 'node', cardinality: 'many' })
-    const genreProp = await logseq.Editor.upsertProperty('genre', { cardinality: 'many' })
+    const genreProp = await logseq.Editor.upsertProperty('genre', { type: 'node', cardinality: 'many' })
     const yearProp = await logseq.Editor.upsertProperty('year', { type: 'string' })
     const urlProp = await logseq.Editor.upsertProperty('url', { type: 'default' })
     const durationProp = await logseq.Editor.upsertProperty('duration', { type: 'string' })
@@ -138,6 +138,7 @@ const App: React.FC = () => {
     // create #movie tag
     const movieTag = await logseq.Editor.createTag('movie', {})
     const directorTag = await logseq.Editor.createTag('director', {})
+    const genreTag = await logseq.Editor.createTag('genre', {})
 
     if (!movieTag?.uuid) {
       throw new Error('Failed to create or retrieve #movie tag.')
@@ -165,6 +166,7 @@ const App: React.FC = () => {
           urlProp,
           durationProp,
           keywordsProp,
+          genreTag,
         },
     )
   }
@@ -206,7 +208,20 @@ const App: React.FC = () => {
           { reset: true },
       )
 
-      await logseq.Editor.upsertBlockProperty(page.uuid, 'genre', movie.genre || [], { reset: true })
+      const genreNodes = []
+      if (movie.genre && movie.genre.length > 0) {
+        for (const gen of movie.genre) {
+          const genrePage = await logseq.Editor.createTag(gen, {})
+          if (genrePage?.uuid) {
+            await logseq.Editor.addBlockTag(genrePage.uuid, 'genre')
+            genreNodes.push(genrePage)
+          }
+        }
+      }
+
+      await logseq.Editor.upsertBlockProperty(
+          page.uuid, 'genre', genreNodes.map((p: any) => p.id) || [],
+          { reset: true })
       // TODO: add existing genres as closed choices values
       // await logseq.Editor.add
 
