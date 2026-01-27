@@ -1,8 +1,6 @@
 import '@logseq/libs'
-import { setCORS } from 'google-translate-api-browser'
-
-// setting up cors-anywhere server address
-const translate = setCORS('https://thingproxy.freeboard.io/fetch/')
+// @ts-ignore
+import { translate } from 'google-translate-api-browser/dist/browser/cjs.js'
 
 /**
  * main entry

@@ -1157,10 +1157,10 @@ globals@^13.2.0:
   dependencies:
     type-fest "^0.20.2"
 
-google-translate-api-browser@3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/google-translate-api-browser/-/google-translate-api-browser-3.0.1.tgz#fa405717c391e5d191a0e54d1b25069a6a9ac354"
-  integrity sha512-KTLodkyGBWMK9IW6QIeJ2zCuju4Z0CLpbkADKo+yLhbSTD4l+CXXpQ/xaynGVAzeBezzJG6qn8MLeqOq3SmW0A==
+google-translate-api-browser@4.1.3:
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/google-translate-api-browser/-/google-translate-api-browser-4.1.3.tgz#dc615ead24db93fd879cc720bc1cdf5f77c73410"
+  integrity sha512-JVnozHkrXDlA54UZ13hIDYBRV7DF8NL61Nd1bc2k9yClTSeKOnWXjFLWKutcvWSUZ6rkt641hX187tLYiXd7SA==
 
 has-flag@^3.0.0:
   version "3.0.0"
